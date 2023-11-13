@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121AD7862B02A70B00EE1C4A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121AD7852B02A70B00EE1C4A /* SettingsView.swift */; };
 		8994EFC82B00E1070022D8A4 /* RainbowGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8994EFC72B00E1070022D8A4 /* RainbowGameApp.swift */; };
 		8994EFCA2B00E1070022D8A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8994EFC92B00E1070022D8A4 /* ContentView.swift */; };
 		8994EFCC2B00E1090022D8A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8994EFCB2B00E1090022D8A4 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		121AD7852B02A70B00EE1C4A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = ../../../SettingsView.swift; sourceTree = "<group>"; };
 		8994EFC42B00E1070022D8A4 /* RainbowGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RainbowGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8994EFC72B00E1070022D8A4 /* RainbowGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowGameApp.swift; sourceTree = "<group>"; };
 		8994EFC92B00E1070022D8A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		8994EFD92B00E9E00022D8A4 /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
+				121AD7852B02A70B00EE1C4A /* SettingsView.swift */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121AD7862B02A70B00EE1C4A /* SettingsView.swift in Sources */,
 				8994EFCA2B00E1070022D8A4 /* ContentView.swift in Sources */,
 				8994EFC82B00E1070022D8A4 /* RainbowGameApp.swift in Sources */,
 			);
