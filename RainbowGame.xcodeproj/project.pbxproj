@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86F1F3522B029936005B5EFA /* Nexus in Resources */ = {isa = PBXBuildFile; fileRef = 86F1F3512B029935005B5EFA /* Nexus */; };
+		86F1F3552B029E73005B5EFA /* GameModule in Frameworks */ = {isa = PBXBuildFile; productRef = 86F1F3542B029E73005B5EFA /* GameModule */; };
 		8994EFC82B00E1070022D8A4 /* RainbowGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8994EFC72B00E1070022D8A4 /* RainbowGameApp.swift */; };
 		8994EFCA2B00E1070022D8A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8994EFC92B00E1070022D8A4 /* ContentView.swift */; };
 		8994EFCC2B00E1090022D8A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8994EFCB2B00E1090022D8A4 /* Assets.xcassets */; };
@@ -14,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		86F1F3512B029935005B5EFA /* Nexus */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Nexus; sourceTree = "<group>"; };
 		8994EFC42B00E1070022D8A4 /* RainbowGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RainbowGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8994EFC72B00E1070022D8A4 /* RainbowGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowGameApp.swift; sourceTree = "<group>"; };
 		8994EFC92B00E1070022D8A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,12 +29,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86F1F3552B029E73005B5EFA /* GameModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86F1F3532B029E73005B5EFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		89407DA12B0109CF0002775A /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -44,8 +55,10 @@
 		8994EFBB2B00E1070022D8A4 = {
 			isa = PBXGroup;
 			children = (
+				86F1F3512B029935005B5EFA /* Nexus */,
 				8994EFC62B00E1070022D8A4 /* RainbowGame */,
 				8994EFC52B00E1070022D8A4 /* Products */,
+				86F1F3532B029E73005B5EFA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +152,9 @@
 			dependencies = (
 			);
 			name = RainbowGame;
+			packageProductDependencies = (
+				86F1F3542B029E73005B5EFA /* GameModule */,
+			);
 			productName = RainbowGame;
 			productReference = 8994EFC42B00E1070022D8A4 /* RainbowGame.app */;
 			productType = "com.apple.product-type.application";
@@ -181,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86F1F3522B029936005B5EFA /* Nexus in Resources */,
 				8994EFCF2B00E1090022D8A4 /* Preview Assets.xcassets in Resources */,
 				8994EFCC2B00E1090022D8A4 /* Assets.xcassets in Resources */,
 			);
@@ -327,7 +344,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RainbowGame/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RainbowGame/Support/Preview Content\"";
 				DEVELOPMENT_TEAM = WV9SZ4237Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -361,7 +378,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RainbowGame/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RainbowGame/Support/Preview Content\"";
 				DEVELOPMENT_TEAM = WV9SZ4237Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -410,6 +427,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		86F1F3542B029E73005B5EFA /* GameModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GameModule;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8994EFBC2B00E1070022D8A4 /* Project object */;
 }
