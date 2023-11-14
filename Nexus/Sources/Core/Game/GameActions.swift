@@ -12,7 +12,7 @@ import Models
 enum GameActions {
     struct TimerTick: Action { }
     
-    struct SetTimeAmount: Action {
+    struct SetTimeAmount: Action, Equatable {
         let time: Double
         init(_ time: Double) { self.time = time }
     }
