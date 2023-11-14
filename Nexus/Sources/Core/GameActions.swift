@@ -20,4 +20,14 @@ enum GameActions {
         let speed: GameState.GameSpeed
         init(_ speed: GameState.GameSpeed) { self.speed = speed }
     }
+    
+    struct AddQuestions: Action {
+        let questions: [Question]
+        init(_ questions: [Question]) { self.questions = questions }
+    }
+    
+    struct DidTapQuestionId: Action {
+        let id: Question.ID
+        init(_ id: Question.ID) { self.id = id }
+    }
 }

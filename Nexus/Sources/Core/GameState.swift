@@ -8,14 +8,10 @@
 import Foundation
 import Redux
 
-struct Question {
-    
-}
-
 struct GameState: Reducer {
     var timeAmount: Double
     var score: Int
-    var questions: [Question]
+    var questions: [Question.ID: Question]
     var speed: GameSpeed
     var isGameCheckEnabled: Bool
     
@@ -23,7 +19,7 @@ struct GameState: Reducer {
     init(
         timeAmount: Double = .init(),
         score: Int = .zero,
-        totalQuestions: [Question] = .init(),
+        totalQuestions: [Question.ID: Question] = .init(),
         speed: GameSpeed = .init(),
         isGameCheckEnabled: Bool = false
     ) {
@@ -34,13 +30,30 @@ struct GameState: Reducer {
         self.isGameCheckEnabled = isGameCheckEnabled
     }
     
+    //MARK: - Reduce
     mutating func reduce(_ action: Action) {
         switch action {
         case let action as GameActions.SetTimeAmount:
             timeAmount = action.time
             
+        case let action as GameActions.AddQuestions:
+            action.questions.forEach { question in
+                questions.updateValue(question, forKey: question.id)
+            }
+            
         case is GameActions.TimerTick:
             timeAmount -= 1
+            
+        case let action as GameActions.DidTapQuestionId:
+            guard let tappedQuestion = questions.removeValue(forKey: action.id) else {
+                assertionFailure("Всегда должен быть элемент по тапу")
+                return
+            }
+            let answeredQuestion = Question(
+                id: tappedQuestion.id,
+                isAnswered: true
+            )
+            questions.updateValue(answeredQuestion, forKey: answeredQuestion.id)
             
         case let action as GameActions.ChangeSpeed:
             speed = action.speed

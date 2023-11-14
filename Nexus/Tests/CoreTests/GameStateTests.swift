@@ -59,8 +59,31 @@ final class GameStateTests: XCTestCase {
         sut.reduce(GameActions.ChangeSpeed(.x5))
         
         XCTAssertEqual(sut.speed, .x5)
+        
+        sut.reduce(GameActions.ChangeSpeed(.x1))
+        
+        XCTAssertEqual(sut.speed, .x1)
     }
     
+    func test_setQuestions() {
+        let questions = [Question()]
+        sut.reduce(GameActions.AddQuestions(questions))
+        
+        XCTAssertEqual(sut.questions.map(\.value), questions)
+    }
     
+    func test_didTapQuestionWithId_() {
+        let question = Question()
+        sut.reduce(GameActions.AddQuestions([question]))
+        
+        sut.reduce(GameActions.DidTapQuestionId(question.id))
+        
+        guard let tappedQuestion = sut.questions.removeValue(forKey: question.id) else {
+            XCTFail("Invalid Setup")
+            return
+        }
+        XCTAssertEqual(tappedQuestion.id, question.id)
+        XCTAssertTrue(tappedQuestion.isAnswered)
+    }
     
 }
