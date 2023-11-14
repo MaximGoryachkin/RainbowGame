@@ -13,7 +13,7 @@ struct Question {
 }
 
 struct GameState: Reducer {
-    var amountOfTime: Double
+    var timeAmount: Double
     var score: Int
     var questions: [Question]
     var speed: GameSpeed
@@ -21,13 +21,13 @@ struct GameState: Reducer {
     
     //MARK: - init(_:)
     init(
-        amountTime: Double = .init(),
+        timeAmount: Double = .init(),
         score: Int = .zero,
         totalQuestions: [Question] = .init(),
         speed: GameSpeed = .init(),
         isGameCheckEnabled: Bool = false
     ) {
-        self.amountOfTime = amountTime
+        self.timeAmount = timeAmount
         self.score = score
         self.questions = totalQuestions
         self.speed = speed
@@ -35,14 +35,30 @@ struct GameState: Reducer {
     }
     
     mutating func reduce(_ action: Action) {
-        
+        switch action {
+        case let action as GameActions.SetTimeAmount:
+            timeAmount = action.time
+            
+        case is GameActions.TimerTick:
+            timeAmount -= 1
+            
+        case let action as GameActions.ChangeSpeed:
+            speed = action.speed
+            
+        default: break
+        }
     }
 }
 
 extension GameState {
+    //MARK: - GameSpeed
     enum GameSpeed: Int {
-        case one = 1
+        case x1 = 1
+        case x2
+        case x3
+        case x4
+        case x5
         
-        init() { self = .one }
+        init() { self = .x1 }
     }
 }
