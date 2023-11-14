@@ -7,6 +7,7 @@
 
 import Foundation
 import Redux
+import Models
 
 struct GameState: Reducer {
     var timeAmount: Double

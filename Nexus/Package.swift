@@ -14,7 +14,13 @@ let package = Package(
     ],
     targets: [
         .target(name: "Redux"),
-        .target(name: "Core", dependencies: ["Redux"]),
+        .target(name: "Models"),
+        .target(
+            name: "Core",
+            dependencies: [
+                "Redux",
+                "Models"
+            ]),
         .target(
             name: "GameModule",
             dependencies: [

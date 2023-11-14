@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Question: Equatable, Identifiable {
-    let id: ID
-    var isAnswered: Bool
+public struct Question: Equatable, Identifiable {
+    public let id: ID
+    public let isAnswered: Bool
     
-    init(
+    public init(
         id: ID = .init(),
         isAnswered: Bool = false
     ) {
@@ -19,8 +19,8 @@ struct Question: Equatable, Identifiable {
         self.isAnswered = isAnswered
     }
     
-    struct ID: Hashable {
+    public struct ID: Hashable {
         let id: UUID
-        init(id: UUID = .init()) { self.id = id }
+        public init(id: UUID = .init()) { self.id = id }
     }
 }

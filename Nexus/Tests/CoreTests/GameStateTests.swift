@@ -1,5 +1,6 @@
 import XCTest
 import Redux
+import Models
 @testable import Core
 
 final class GameStateTests: XCTestCase {

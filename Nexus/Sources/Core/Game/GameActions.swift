@@ -7,6 +7,7 @@
 
 import Foundation
 import Redux
+import Models
 
 enum GameActions {
     struct TimerTick: Action { }
