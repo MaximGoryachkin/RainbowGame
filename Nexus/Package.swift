@@ -1,4 +1,4 @@
-// swift-tools-version: 5.9
+// swift-tools-version: 5.8
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -14,13 +14,22 @@ let package = Package(
     ],
     targets: [
         .target(name: "Redux"),
+        .target(name: "Core", dependencies: ["Redux"]),
         .target(
             name: "GameModule",
             dependencies: [
-                "Redux"
+                "Core"
             ]),
+//        .testTarget(
+//            name: "GameModuleTests",
+//            dependencies: [
+//                "GameModule",
+//                "Core"
+//            ]),
         .testTarget(
-            name: "GameModuleTests",
-            dependencies: ["GameModule"]),
+            name: "CoreTests",
+            dependencies: [
+                "Core"
+            ])
     ]
 )
