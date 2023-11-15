@@ -15,6 +15,12 @@ extension Graph {
 struct GameNode {
     private let graph: Graph
     
+    //MARK: - init(_:)
+    init(graph: Graph) {
+        self.graph = graph
+    }
+    
+    //MARK: - interface
     var timeAmount: Double {
         get { graph.state.timeAmount }
         nonmutating set { graph.dispatch(GameActions.SetTimeAmount(newValue)) }
@@ -25,8 +31,21 @@ struct GameNode {
         nonmutating set { graph.dispatch(GameActions.AddQuestions(newValue)) }
     }
     
-    //MARK: - init(_:)
-    init(graph: Graph) {
-        self.graph = graph
+    var speed: GameState.GameSpeed {
+        get { graph.state.speed }
+        nonmutating set { graph.dispatch(GameActions.ChangeSpeed(newValue)) }
     }
+    
+    func play() {
+        graph.dispatch(GameActions.Play())
+    }
+    
+    func pause() {
+        graph.dispatch(GameActions.Pause())
+    }
+    
+    func timerTick() {
+        graph.dispatch(GameActions.TimerTick())
+    }
+    
 }

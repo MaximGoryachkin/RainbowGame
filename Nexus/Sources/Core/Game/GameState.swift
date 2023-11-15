@@ -21,14 +21,14 @@ struct GameState: Reducer {
     init(
         timeAmount: Double = .init(),
         score: Int = .zero,
-        totalQuestions: [Question.ID: Question] = .init(),
+        questions: [Question.ID: Question] = .init(),
         speed: GameSpeed = .init(),
         isGameCheckEnabled: Bool = false,
         isPlaying: Bool = false
     ) {
         self.timeAmount = timeAmount
         self.score = score
-        self.questions = totalQuestions
+        self.questions = questions
         self.speed = speed
         self.isGameCheckEnabled = isGameCheckEnabled
         self.isPlaying = isPlaying

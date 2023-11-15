@@ -51,6 +51,32 @@ final class GraphTests: XCTestCase {
         )
     }
     
+    func test_setSpeed_emitSetSpeedAction() {
+        sut.game.speed = .x2
+        
+        let action = action as? GameActions.ChangeSpeed
+        XCTAssertEqual(
+            action,
+            GameActions.ChangeSpeed(.x2)
+        )
+    }
     
+    func test_playAction() {
+        sut.game.play()
+        
+        XCTAssertTrue(action is GameActions.Play)
+    }
+    
+    func test_pauseAction() {
+        sut.game.pause()
+        
+        XCTAssertTrue(action is GameActions.Pause)
+    }
+    
+    func test_timerTick() {
+        sut.game.timerTick()
+        
+        XCTAssertTrue(action is GameActions.TimerTick)
+    }
     
 }

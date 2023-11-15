@@ -12,14 +12,14 @@ import Models
 enum GameActions {
     struct TimerTick: Action {}
     struct Play: Action {}
-    
     struct Pause: Action {}
+    
     struct SetTimeAmount: Action, Equatable {
         let time: Double
         init(_ time: Double) { self.time = time }
     }
 
-    struct ChangeSpeed: Action {
+    struct ChangeSpeed: Action, Equatable {
         let speed: GameState.GameSpeed
         init(_ speed: GameState.GameSpeed) { self.speed = speed }
     }
