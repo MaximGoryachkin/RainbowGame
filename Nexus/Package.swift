@@ -11,10 +11,12 @@ let package = Package(
     ],
     products: [
         .library(name: "GameModule", targets: ["GameModule"]),
+        .library(name: "Timer", targets: ["Timer"]),
     ],
     targets: [
         .target(name: "Redux"),
         .target(name: "Models"),
+        .target(name: "Timer", dependencies: ["Core"]),
         .target(
             name: "Core",
             dependencies: [

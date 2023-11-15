@@ -9,10 +9,10 @@ import Foundation
 import Models
 
 extension Graph {
-    var game: GameNode { .init(graph: self) }
+    public var game: GameNode { .init(graph: self) }
 }
 
-struct GameNode {
+public struct GameNode {
     private let graph: Graph
     
     //MARK: - init(_:)
@@ -26,6 +26,8 @@ struct GameNode {
         nonmutating set { graph.dispatch(GameActions.SetTimeAmount(newValue)) }
     }
     
+    public var isPlaying: Bool { graph.state.isPlaying }
+    
     var questions: [Question] {
         get { graph.state.questions.map(\.value) }
         nonmutating set { graph.dispatch(GameActions.AddQuestions(newValue)) }
@@ -36,15 +38,15 @@ struct GameNode {
         nonmutating set { graph.dispatch(GameActions.ChangeSpeed(newValue)) }
     }
     
-    func play() {
+    public func play() {
         graph.dispatch(GameActions.Play())
     }
     
-    func pause() {
+    public func pause() {
         graph.dispatch(GameActions.Pause())
     }
     
-    func timerTick() {
+    public func timerTick() {
         graph.dispatch(GameActions.TimerTick())
     }
     

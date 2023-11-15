@@ -8,7 +8,7 @@
 import Foundation
 import Redux
 
-final class EnvironmentStore: ObservableObject {
+public final class EnvironmentStore: ObservableObject {
     private let store: Store<GameState>
     private let queue: DispatchQueue = .init(
         label: "EnvironmentStore",
@@ -22,7 +22,7 @@ final class EnvironmentStore: ObservableObject {
         return .active
     }
     
-    @Published private(set) var graph: Graph
+    @Published public private(set) var graph: Graph
     
     //MARK: - init(_:)
     init(_ store: Store<GameState>) {

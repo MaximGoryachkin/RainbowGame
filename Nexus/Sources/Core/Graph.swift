@@ -8,7 +8,7 @@
 import Foundation
 import Redux
 
-struct Graph {
+public struct Graph: Equatable {
     let state: GameState
     let dispatch: (Action) -> Void
     
@@ -19,5 +19,9 @@ struct Graph {
     ) {
         self.state = state
         self.dispatch = dispatch
+    }
+    
+    public static func == (lhs: Graph, rhs: Graph) -> Bool {
+        lhs.state == rhs.state
     }
 }

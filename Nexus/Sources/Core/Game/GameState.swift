@@ -9,7 +9,7 @@ import Foundation
 import Redux
 import Models
 
-struct GameState: Reducer {
+struct GameState: Reducer, Equatable {
     var timeAmount: Double
     var score: Int
     var questions: [Question.ID: Question]
