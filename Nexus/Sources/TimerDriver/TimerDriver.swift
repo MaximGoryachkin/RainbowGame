@@ -18,7 +18,7 @@ public final class TimerDriver {
     private var logger: Logger?
     
     //MARK: - init(_:)
-    init(
+    public init(
         store: EnvironmentStore,
         runLoop: RunLoop = .main,
         logger: Logger? = nil
