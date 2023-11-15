@@ -36,6 +36,21 @@ final class GraphTests: XCTestCase {
         let action = action as? GameActions.SetTimeAmount
         XCTAssertEqual(
             action,
-            GameActions.SetTimeAmount(10))
+            GameActions.SetTimeAmount(10)
+        )
     }
+    
+    func test_setQuestions_emitAddQuestionsAction() {
+        let questions = [Question()]
+        sut.game.questions = questions
+        
+        let action = action as? GameActions.AddQuestions
+        XCTAssertEqual(
+            action,
+            GameActions.AddQuestions(questions)
+        )
+    }
+    
+    
+    
 }

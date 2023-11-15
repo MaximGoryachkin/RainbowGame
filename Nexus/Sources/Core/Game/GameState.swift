@@ -15,6 +15,7 @@ struct GameState: Reducer {
     var questions: [Question.ID: Question]
     var speed: GameSpeed
     var isGameCheckEnabled: Bool
+    var isPlaying: Bool
     
     //MARK: - init(_:)
     init(
@@ -22,13 +23,15 @@ struct GameState: Reducer {
         score: Int = .zero,
         totalQuestions: [Question.ID: Question] = .init(),
         speed: GameSpeed = .init(),
-        isGameCheckEnabled: Bool = false
+        isGameCheckEnabled: Bool = false,
+        isPlaying: Bool = false
     ) {
         self.timeAmount = timeAmount
         self.score = score
         self.questions = totalQuestions
         self.speed = speed
         self.isGameCheckEnabled = isGameCheckEnabled
+        self.isPlaying = isPlaying
     }
     
     //MARK: - Reduce
@@ -44,6 +47,12 @@ struct GameState: Reducer {
             
         case is GameActions.TimerTick:
             timeAmount -= 1
+            
+        case is GameActions.Play:
+            isPlaying = true
+            
+        case is GameActions.Pause:
+            isPlaying = false
             
         case let action as GameActions.DidTapQuestionId:
             guard let tappedQuestion = questions.removeValue(forKey: action.id) else {

@@ -10,8 +10,10 @@ import Redux
 import Models
 
 enum GameActions {
-    struct TimerTick: Action { }
+    struct TimerTick: Action {}
+    struct Play: Action {}
     
+    struct Pause: Action {}
     struct SetTimeAmount: Action, Equatable {
         let time: Double
         init(_ time: Double) { self.time = time }
@@ -22,7 +24,7 @@ enum GameActions {
         init(_ speed: GameState.GameSpeed) { self.speed = speed }
     }
     
-    struct AddQuestions: Action {
+    struct AddQuestions: Action, Equatable {
         let questions: [Question]
         init(_ questions: [Question]) { self.questions = questions }
     }

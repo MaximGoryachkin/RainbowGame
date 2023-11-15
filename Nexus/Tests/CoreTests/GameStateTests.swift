@@ -44,7 +44,7 @@ final class GameStateTests: XCTestCase {
         XCTAssertEqual(sut.timeAmount, 10)
     }
     
-    func test_recieveGameSpeedChange() {
+    func test_reduceGameSpeedAction() {
         sut.reduce(GameActions.ChangeSpeed(.x2))
         
         XCTAssertEqual(sut.speed, .x2)
@@ -66,14 +66,14 @@ final class GameStateTests: XCTestCase {
         XCTAssertEqual(sut.speed, .x1)
     }
     
-    func test_setQuestions() {
+    func test_reduceAddQuestions() {
         let questions = [Question()]
         sut.reduce(GameActions.AddQuestions(questions))
         
         XCTAssertEqual(sut.questions.map(\.value), questions)
     }
     
-    func test_didTapQuestionWithId_() {
+    func test_reduceDidTapQuestionWithId_() {
         let question = Question()
         sut.reduce(GameActions.AddQuestions([question]))
         
@@ -85,6 +85,20 @@ final class GameStateTests: XCTestCase {
         }
         XCTAssertEqual(tappedQuestion.id, question.id)
         XCTAssertTrue(tappedQuestion.isAnswered)
+    }
+    
+    func test_reducePlayAction() {
+        sut.reduce(GameActions.Play())
+        
+        XCTAssertEqual(sut.isPlaying, true)
+    }
+    
+    func test_reducePauseAction() {
+        sut.isPlaying = true
+        
+        sut.reduce(GameActions.Pause())
+        
+        XCTAssertEqual(sut.isPlaying, false)
     }
     
 }
