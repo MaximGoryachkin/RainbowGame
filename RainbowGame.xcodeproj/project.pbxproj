@@ -13,6 +13,7 @@
 		8994EFCA2B00E1070022D8A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8994EFC92B00E1070022D8A4 /* ContentView.swift */; };
 		8994EFCC2B00E1090022D8A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8994EFCB2B00E1090022D8A4 /* Assets.xcassets */; };
 		8994EFCF2B00E1090022D8A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8994EFCE2B00E1090022D8A4 /* Preview Assets.xcassets */; };
+		EED09AF32B03BC9300FF47ED /* Nexus in Resources */ = {isa = PBXBuildFile; fileRef = EED09AF22B03BC9200FF47ED /* Nexus */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		8994EFC92B00E1070022D8A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8994EFCB2B00E1090022D8A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8994EFCE2B00E1090022D8A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EED09AF22B03BC9200FF47ED /* Nexus */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Nexus; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		8994EFBB2B00E1070022D8A4 = {
 			isa = PBXGroup;
 			children = (
+				EED09AF22B03BC9200FF47ED /* Nexus */,
 				8994EFC62B00E1070022D8A4 /* RainbowGame */,
 				8994EFC52B00E1070022D8A4 /* Products */,
 			);
@@ -195,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EED09AF32B03BC9300FF47ED /* Nexus in Resources */,
 				8994EFCF2B00E1090022D8A4 /* Preview Assets.xcassets in Resources */,
 				8994EFCC2B00E1090022D8A4 /* Assets.xcassets in Resources */,
 			);
