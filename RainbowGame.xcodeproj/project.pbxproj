@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0F092C2B06B4FD00FCAD88 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F092B2B06B4FD00FCAD88 /* SettingsModel.swift */; };
 		0DFB26582B02892D00893E2C /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB26572B02892D00893E2C /* MainButton.swift */; };
 		0DFB265D2B02AD9C00893E2C /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB265C2B02AD9C00893E2C /* OptionButton.swift */; };
 		121AD78A2B02A79500EE1C4A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121AD7892B02A79500EE1C4A /* SettingsView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D0F092B2B06B4FD00FCAD88 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		0DFB26572B02892D00893E2C /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		0DFB265C2B02AD9C00893E2C /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
 		121AD7892B02A79500EE1C4A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -42,6 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D0F092D2B06B50300FCAD88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0D0F092B2B06B4FD00FCAD88 /* SettingsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0DFB26562B02845100893E2C /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				8994EFDA2B00FFA00022D8A4 /* App */,
+				0D0F092D2B06B50300FCAD88 /* Model */,
 				8994EFD52B00E77C0022D8A4 /* MainView */,
 				8994EFD62B00E7A60022D8A4 /* GameView */,
 				8994EFD72B00E9AF0022D8A4 /* RulesView */,
@@ -222,6 +233,7 @@
 				121AD78A2B02A79500EE1C4A /* SettingsView.swift in Sources */,
 				8994EFCA2B00E1070022D8A4 /* ContentView.swift in Sources */,
 				0DFB265D2B02AD9C00893E2C /* OptionButton.swift in Sources */,
+				0D0F092C2B06B4FD00FCAD88 /* SettingsModel.swift in Sources */,
 				8994EFC82B00E1070022D8A4 /* RainbowGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
