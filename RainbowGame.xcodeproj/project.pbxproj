@@ -13,6 +13,7 @@
 		8994EFCA2B00E1070022D8A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8994EFC92B00E1070022D8A4 /* ContentView.swift */; };
 		8994EFCC2B00E1090022D8A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8994EFCB2B00E1090022D8A4 /* Assets.xcassets */; };
 		8994EFCF2B00E1090022D8A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8994EFCE2B00E1090022D8A4 /* Preview Assets.xcassets */; };
+		B39124542B069BB2009BC96C /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39124532B069BB2009BC96C /* RulesView.swift */; };
 		EED09AF32B03BC9300FF47ED /* Nexus in Resources */ = {isa = PBXBuildFile; fileRef = EED09AF22B03BC9200FF47ED /* Nexus */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		8994EFC92B00E1070022D8A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8994EFCB2B00E1090022D8A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8994EFCE2B00E1090022D8A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B39124532B069BB2009BC96C /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = SOURCE_ROOT; };
 		EED09AF22B03BC9200FF47ED /* Nexus */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Nexus; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 		8994EFD72B00E9AF0022D8A4 /* RulesView */ = {
 			isa = PBXGroup;
 			children = (
+				B39124532B069BB2009BC96C /* RulesView.swift */,
 			);
 			path = RulesView;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DFB26582B02892D00893E2C /* MainButton.swift in Sources */,
+				B39124542B069BB2009BC96C /* RulesView.swift in Sources */,
 				8994EFCA2B00E1070022D8A4 /* ContentView.swift in Sources */,
 				0DFB265D2B02AD9C00893E2C /* OptionButton.swift in Sources */,
 				8994EFC82B00E1070022D8A4 /* RainbowGameApp.swift in Sources */,
