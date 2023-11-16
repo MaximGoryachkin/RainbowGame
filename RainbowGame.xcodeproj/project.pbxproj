@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0DFB26582B02892D00893E2C /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB26572B02892D00893E2C /* MainButton.swift */; };
 		0DFB265D2B02AD9C00893E2C /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB265C2B02AD9C00893E2C /* OptionButton.swift */; };
+		121AD78A2B02A79500EE1C4A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121AD7892B02A79500EE1C4A /* SettingsView.swift */; };
 		8994EFC82B00E1070022D8A4 /* RainbowGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8994EFC72B00E1070022D8A4 /* RainbowGameApp.swift */; };
 		8994EFCA2B00E1070022D8A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8994EFC92B00E1070022D8A4 /* ContentView.swift */; };
 		8994EFCC2B00E1090022D8A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8994EFCB2B00E1090022D8A4 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		0DFB26572B02892D00893E2C /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		0DFB265C2B02AD9C00893E2C /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
+		121AD7892B02A79500EE1C4A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8994EFC42B00E1070022D8A4 /* RainbowGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RainbowGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8994EFC72B00E1070022D8A4 /* RainbowGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowGameApp.swift; sourceTree = "<group>"; };
 		8994EFC92B00E1070022D8A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		8994EFD92B00E9E00022D8A4 /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
+				121AD7892B02A79500EE1C4A /* SettingsView.swift */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				0DFB26582B02892D00893E2C /* MainButton.swift in Sources */,
 				B39124542B069BB2009BC96C /* RulesView.swift in Sources */,
+				121AD78A2B02A79500EE1C4A /* SettingsView.swift in Sources */,
 				8994EFCA2B00E1070022D8A4 /* ContentView.swift in Sources */,
 				0DFB265D2B02AD9C00893E2C /* OptionButton.swift in Sources */,
 				8994EFC82B00E1070022D8A4 /* RainbowGameApp.swift in Sources */,
