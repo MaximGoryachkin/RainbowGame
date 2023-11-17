@@ -15,7 +15,7 @@ struct MainButton: View {
     var body: some View {
         NavigationLink(destination: destination) {
             Text(text)
-                .font(.system(size: 20))
+                .font(.system(size: 20, weight: .semibold, design: .rounded))
                 .foregroundStyle(.white)
                 .padding(.vertical, 31)
         }

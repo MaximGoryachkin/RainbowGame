@@ -46,14 +46,32 @@ final class SettingsModel: ObservableObject {
     func backgroundColor(defaultColor: defaultBackgroundColors) -> some View {
         switch defaultColor {
         case .gray:
-            return Color.gray
+            return Color("GreyMode")
                 .edgesIgnoringSafeArea(.all)
         case .white:
             return Color.white
                 .edgesIgnoringSafeArea(.all)
         case .black:
-            return Color.black
+            return Color("NightMode")
                 .edgesIgnoringSafeArea(.all)
+        }
+    }
+    
+    //: Switch text color
+    func switchTextColor(colors: defaultBackgroundColors, text: String) -> Text {
+        switch colors {
+        case .gray:
+            return Text(text)
+                .font(.system(size: 36, weight: .semibold, design: .rounded))
+                .foregroundColor(Color.white)
+        case .white:
+            return Text(text)
+                .font(.system(size: 36, weight: .semibold, design: .rounded))
+                .foregroundColor(Color.black)
+        case .black:
+            return Text(text)
+                .font(.system(size: 36, weight: .semibold, design: .rounded))
+                .foregroundColor(Color.white)
         }
     }
     

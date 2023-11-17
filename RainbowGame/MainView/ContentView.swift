@@ -20,11 +20,11 @@ struct ContentView: View {
                         .padding(.horizontal, 35)
                     
                     VStack(spacing: 16) {
-                        Text("НЛП Игра")
-                            .font(.system(size: 36))
+                        settingsModel.switchTextColor(colors: settingsModel.defaultBackgroundColor, text: "НЛП Игра")
+                            .font(.system(size: 36, design: .rounded))
                         
-                        Text("Радуга")
-                            .font(.system(size: 36, weight: .bold))
+                        settingsModel.switchTextColor(colors: settingsModel.defaultBackgroundColor, text: "Радуга")
+                            .font(.system(size: 36, weight: .bold, design: .rounded))
                     }
                     .padding(.top, 6)
                     .padding(.bottom, 20)
