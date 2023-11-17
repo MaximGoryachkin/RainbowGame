@@ -33,7 +33,7 @@ struct ContentView: View {
                         MainButton(text: "Новая игра",
                                    color: .red, destination: EmptyView())
                         MainButton(text: "Продолжить", color: .blue, destination: EmptyView())
-                        MainButton(text: "Статистика", color: .green, destination: EmptyView())
+                        MainButton(text: "Статистика", color: .green, destination: ResultView())
                     }
                     .padding(.horizontal, 48)
                     

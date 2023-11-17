@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct MainButton: View {
+struct MainButton<Destination: View>: View {
     var text: String
     var color: Color
-    var destination: EmptyView
+    var destination: Destination
     
     var body: some View {
         NavigationLink(destination: destination) {
