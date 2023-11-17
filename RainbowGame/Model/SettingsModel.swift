@@ -25,8 +25,7 @@ final class SettingsModel: ObservableObject {
     @AppStorage("sizeSymbol") var sizeSymbolRow: Double = 12
     @AppStorage("backgroundSymbol") var backgroundSymbol: Bool = false
 //    @AppStorage("wordsColors") var wordsColors: [UIColor] = []
-    
-//    var backgroundСolor: [String: String] = ["Белый": ".white", "Черный": ".black", "Серый": ".gray",]
+ 
     @AppStorage("defaultBackgroundColor") var defaultBackgroundColor = defaultBackgroundColors.gray
     @AppStorage("defaultWordArrangement") var defaultWordArrangement = WordsArrangements.random
     
@@ -36,6 +35,25 @@ final class SettingsModel: ObservableObject {
         }
         set {
             sizeSymbolRow = Double(newValue)
+        }
+    }
+    
+    func colorPicker(check: UIColor) {
+        
+    }
+    
+    //: add backround color on View
+    func backgroundColor(defaultColor: defaultBackgroundColors) -> some View {
+        switch defaultColor {
+        case .gray:
+            return Color.gray
+                .edgesIgnoringSafeArea(.all)
+        case .white:
+            return Color.white
+                .edgesIgnoringSafeArea(.all)
+        case .black:
+            return Color.black
+                .edgesIgnoringSafeArea(.all)
         }
     }
     

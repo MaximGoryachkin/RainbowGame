@@ -23,7 +23,7 @@ struct SettingsView: View {
             }
             Section {
                 HStack {
-                    Text("Скорость смены, задыний, сек")
+                    Text("Скорость смены, заданий, сек")
                     Slider(value: $settingsModel.speedSwitch, in: 0...4, step: 1)
                     Text("\(settingsModel.speedSwitch, specifier: "%.0f")")
                 }
