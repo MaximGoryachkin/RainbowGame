@@ -34,6 +34,7 @@ struct SettingsView: View {
                     Text("Игра с проверкой заданий")
                     Toggle(isOn: $settingsModel.isCheckedTask) {
                     }
+                    .tint(Color.orange)
                 }
             }
             
@@ -46,7 +47,7 @@ struct SettingsView: View {
             }
             Section {
                 HStack {
-                    Stepper("Размер букв", value: $settingsModel.sizeSymbol, in: 14...22, step: 1)
+                    Stepper("Размер букв", value: $settingsModel.sizeSymbol, in: 17...22, step: 1)
                     Text("Aa")
                         .font(.system(size: settingsModel.sizeSymbol))
                 }
@@ -56,13 +57,14 @@ struct SettingsView: View {
                     Text("Подложка для букв")
                     Toggle(isOn: $settingsModel.backgroundSymbol) {
                     }
+                    .tint(Color.orange)
                 }
             }
             Section {
                 VStack(alignment: .leading) {
                     Text("Цвет фона")
                     Picker("", selection: $settingsModel.defaultBackgroundColor) {
-                        ForEach(defaultBackgroundColors.allCases, id: \.self) { word in
+                        ForEach(DefaultBackgroundColors.allCases, id: \.self) { word in
                             Text(word.rawValue.capitalized)
                                 .tag(word.rawValue)
                         }
