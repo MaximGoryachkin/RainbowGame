@@ -93,7 +93,6 @@
 				8994EFDA2B00FFA00022D8A4 /* App */,
 				0D0F092D2B06B50300FCAD88 /* Model */,
 				8994EFD52B00E77C0022D8A4 /* MainView */,
-				8994EFD62B00E7A60022D8A4 /* GameView */,
 				8994EFD72B00E9AF0022D8A4 /* RulesView */,
 				8994EFD82B00E9D20022D8A4 /* ResultsVIew */,
 				8994EFD92B00E9E00022D8A4 /* SettingsView */,
@@ -117,13 +116,6 @@
 				0DFB26562B02845100893E2C /* Components */,
 			);
 			path = MainView;
-			sourceTree = "<group>";
-		};
-		8994EFD62B00E7A60022D8A4 /* GameView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = GameView;
 			sourceTree = "<group>";
 		};
 		8994EFD72B00E9AF0022D8A4 /* RulesView */ = {
