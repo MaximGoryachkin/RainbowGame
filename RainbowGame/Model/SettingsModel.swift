@@ -24,7 +24,7 @@ final class SettingsModel: ObservableObject {
     @AppStorage("checkedTask") var isCheckedTask: Bool = false
     @AppStorage("sizeSymbol") var sizeSymbolRow: Double = 12
     @AppStorage("backgroundSymbol") var backgroundSymbol: Bool = false
-//    @AppStorage("wordsColors") var wordsColors: [UIColor] = []
+    @Published var wordsColors: [Color] = []
  
     @AppStorage("defaultBackgroundColor") var defaultBackgroundColor = defaultBackgroundColors.gray
     @AppStorage("defaultWordArrangement") var defaultWordArrangement = WordsArrangements.random
