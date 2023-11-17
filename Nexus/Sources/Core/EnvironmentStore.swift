@@ -9,11 +9,14 @@ import Foundation
 import Redux
 
 public final class EnvironmentStore: ObservableObject {
+    //MARK: - Private properties
     private let store: Store<GameState>
     private let queue: DispatchQueue = .init(
         label: "EnvironmentStore",
         qos: .userInteractive
     )
+    
+    //MARK: - Public properties
     private(set) lazy var asObserver: Observer<GameState> = .init(
         queue: queue
     ) { [weak self] state in
@@ -25,7 +28,7 @@ public final class EnvironmentStore: ObservableObject {
     @Published public private(set) var graph: Graph
     
     //MARK: - init(_:)
-    init(_ store: Store<GameState>) {
+    public init(_ store: Store<GameState>) {
         self.store = store
         self.graph = .init(
             self.store.state,

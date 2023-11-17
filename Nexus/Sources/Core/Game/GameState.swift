@@ -9,7 +9,7 @@ import Foundation
 import Redux
 import Models
 
-struct GameState: Reducer, Equatable {
+public struct GameState: Reducer, Equatable {
     var timeAmount: Double
     var score: Int
     var questions: [Question.ID: Question]
@@ -35,7 +35,7 @@ struct GameState: Reducer, Equatable {
     }
     
     //MARK: - Reduce
-    mutating func reduce(_ action: Action) {
+    mutating public func reduce(_ action: Action) {
         switch action {
         case let action as GameActions.SetTimeAmount:
             timeAmount = action.time
