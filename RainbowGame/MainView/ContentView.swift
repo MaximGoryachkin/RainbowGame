@@ -28,16 +28,16 @@ struct ContentView: View {
                 
                 VStack(spacing: 16) {
                     MainButton(text: "Новая игра",
-                               color: .red, destination: ContentView())
-                    MainButton(text: "Продолжить", color: .blue, destination: ContentView())
-                    MainButton(text: "Статистика", color: .green, destination: ContentView())
+                               color: .red, destination: EmptyView())
+                    MainButton(text: "Продолжить", color: .blue, destination: EmptyView())
+                    MainButton(text: "Статистика", color: .green, destination: EmptyView())
                 }
                 .padding(.horizontal, 48)
                 
                 HStack {
-                    OptionButton(image: "settings", destination: ContentView())
+                    OptionButton(image: "settings", destination: SettingsView(settingsModel: SettingsModel()))
                     Spacer()
-                    OptionButton(image: "question", destination: ContentView())
+                    OptionButton(image: "question", destination: RulesView())
                 }
                 .padding(.top, 30)
                 .padding(.horizontal, 28)

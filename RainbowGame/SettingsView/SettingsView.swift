@@ -8,13 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var timeGame: Double = 11
-    @State private var speedSwitch: Double = 2
-    @State private var checkGame: Bool = false
+    @StateObject var settingsModel: SettingsModel
     @State private var backgroundSymbol: Bool = false
-    @State private var sizeSymbol: CGFloat = 12
-    @State private var backgroundFont: Int = 0
-    @State private var locationSymbol: Int = 0
     @State private var colorSymbol = Color.red
     
     var body: some View {
@@ -22,22 +17,22 @@ struct SettingsView: View {
             Section {
                 HStack {
                     Text("Время игры, мин")
-                    Slider(value: $timeGame, in: 0...20)
-                    Text("\(timeGame, specifier: "%.0f")")
+                    Slider(value: $settingsModel.timeGame, in: 0...20)
+                    Text("\(settingsModel.timeGame, specifier: "%.0f")")
                 }
             }
             Section {
                 HStack {
                     Text("Скорость смены, задыний, сек")
-                    Slider(value: $speedSwitch, in: 0...4)
-                    Text("\(speedSwitch, specifier: "%.0f")")
+                    Slider(value: $settingsModel.speedSwitch, in: 0...4)
+                    Text("\(settingsModel.speedSwitch, specifier: "%.0f")")
                 }
             }
             
             Section {
                 HStack {
                     Text("Игра с проверкой заданий")
-                    Toggle(isOn: $checkGame) {
+                    Toggle(isOn: $settingsModel.isCheckedTask) {
                     }
                 }
             }
@@ -51,25 +46,26 @@ struct SettingsView: View {
             }
             Section {
                 HStack {
-                    Stepper("Размер букв", value: $sizeSymbol, step: 1)
+                    Stepper("Размер букв", value: $settingsModel.sizeSymbol, step: 1)
                     Text("Aa")
-                        .font(.system(size: sizeSymbol))
+                        .font(.system(size: settingsModel.sizeSymbol))
                 }
             }
             Section {
                 HStack {
                     Text("Подложка для букв")
-                    Toggle(isOn: $backgroundSymbol) {
+                    Toggle(isOn: $settingsModel.backgroundSymbol) {
                     }
                 }
             }
             Section {
                 VStack(alignment: .leading) {
                     Text("Цвет фона")
-                    Picker("Segment", selection: $backgroundFont) {
-                        Text("Серый").tag(0)
-                        Text("Белый").tag(1)
-                        Text("Черный").tag(2)
+                    Picker("", selection: $settingsModel.defaultBackgroundColor) {
+                        ForEach(["Серый", "Белый", "Черный"], id: \.self) { key in
+                            Text(key)
+                                .tag(settingsModel.backgroundСolor[key] ?? "")
+                        }
                     }
                     .pickerStyle(.segmented)
                 }
@@ -77,9 +73,11 @@ struct SettingsView: View {
             Section {
                 VStack(alignment: .leading) {
                     Text("Расположение слова на экране")
-                    Picker("Segment", selection: $locationSymbol) {
-                        Text("Случайно").tag(0)
-                        Text("По центру").tag(1)
+                    Picker("", selection: $settingsModel.defaultWordArrangement) {
+                        ForEach(settingsModel.wordArrangement, id: \.self) { word in
+                            Text(word)
+                                .tag(word)
+                        }
                     }
                     .pickerStyle(.segmented)
                 }
@@ -111,6 +109,6 @@ struct CustomColorPiker: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(settingsModel: SettingsModel())
     }
 }
