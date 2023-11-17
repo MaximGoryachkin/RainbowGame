@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct OptionButton: View {
+struct OptionButton<Destination: View>: View {
     var image: String
-    var destination: ContentView
+    var destination: Destination
     
     var body: some View {
         NavigationLink(destination: destination) {
@@ -20,5 +20,5 @@ struct OptionButton: View {
 }
 
 #Preview {
-    OptionButton(image: "settings", destination: ContentView())
+    OptionButton(image: "settings", destination: EmptyView())
 }

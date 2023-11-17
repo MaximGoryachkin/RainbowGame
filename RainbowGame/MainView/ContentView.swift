@@ -8,45 +8,49 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var settingsModel: SettingsModel
     var body: some View {
         NavigationView {
-            VStack {
-                Image("pngwing")
-                    .resizable()
-                    .scaledToFit()
-                    .padding(.horizontal, 35)
-                
-                VStack(spacing: 16) {
-                    Text("НЛП Игра")
-                        .font(.system(size: 36))
+            ZStack {
+                settingsModel.backgroundColor(defaultColor: settingsModel.defaultBackgroundColor)
+                VStack {
+                    Image("pngwing")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.horizontal, 35)
                     
-                    Text("Радуга")
-                        .font(.system(size: 36, weight: .bold))
+                    VStack(spacing: 16) {
+                        Text("НЛП Игра")
+                            .font(.system(size: 36))
+                        
+                        Text("Радуга")
+                            .font(.system(size: 36, weight: .bold))
+                    }
+                    .padding(.top, 6)
+                    .padding(.bottom, 20)
+                    
+                    VStack(spacing: 16) {
+                        MainButton(text: "Новая игра",
+                                   color: .red, destination: EmptyView())
+                        MainButton(text: "Продолжить", color: .blue, destination: EmptyView())
+                        MainButton(text: "Статистика", color: .green, destination: EmptyView())
+                    }
+                    .padding(.horizontal, 48)
+                    
+                    HStack {
+                        OptionButton(image: "settings", destination: SettingsView())
+                        Spacer()
+                        OptionButton(image: "question", destination: RulesView())
+                    }
+                    .padding(.top, 30)
+                    .padding(.horizontal, 28)
+                    .shadow(color: Color.black.opacity(0.2), radius: 3, y: 6)
                 }
-                .padding(.top, 6)
-                .padding(.bottom, 20)
-                
-                VStack(spacing: 16) {
-                    MainButton(text: "Новая игра",
-                               color: .red, destination: ContentView())
-                    MainButton(text: "Продолжить", color: .blue, destination: ContentView())
-                    MainButton(text: "Статистика", color: .green, destination: ContentView())
-                }
-                .padding(.horizontal, 48)
-                
-                HStack {
-                    OptionButton(image: "settings", destination: ContentView())
-                    Spacer()
-                    OptionButton(image: "question", destination: ContentView())
-                }
-                .padding(.top, 30)
-                .padding(.horizontal, 28)
-                .shadow(color: Color.black.opacity(0.2), radius: 3, y: 6)
             }
         }
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}
