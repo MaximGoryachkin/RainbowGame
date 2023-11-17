@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct RainbowGameApp: App {
+    private var settingsModel = SettingsModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(settingsModel)
         }
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @StateObject var settingsModel: SettingsModel
+    @EnvironmentObject var settingsModel: SettingsModel
     @State private var backgroundSymbol: Bool = false
     @State private var colorSymbol = Color.red
     
@@ -17,14 +17,14 @@ struct SettingsView: View {
             Section {
                 HStack {
                     Text("Время игры, мин")
-                    Slider(value: $settingsModel.timeGame, in: 0...20)
+                    Slider(value: $settingsModel.timeGame, in: 0...20, step: 1)
                     Text("\(settingsModel.timeGame, specifier: "%.0f")")
                 }
             }
             Section {
                 HStack {
                     Text("Скорость смены, задыний, сек")
-                    Slider(value: $settingsModel.speedSwitch, in: 0...4)
+                    Slider(value: $settingsModel.speedSwitch, in: 0...4, step: 1)
                     Text("\(settingsModel.speedSwitch, specifier: "%.0f")")
                 }
             }
@@ -62,21 +62,20 @@ struct SettingsView: View {
                 VStack(alignment: .leading) {
                     Text("Цвет фона")
                     Picker("", selection: $settingsModel.defaultBackgroundColor) {
-                        ForEach(["Серый", "Белый", "Черный"], id: \.self) { key in
-                            Text(key)
-                                .tag(settingsModel.backgroundСolor[key] ?? "")
+                        ForEach(defaultBackgroundColors.allCases, id: \.self) { word in
+                            Text(word.rawValue.capitalized)
+                                .tag(word.rawValue)
                         }
-                    }
-                    .pickerStyle(.segmented)
+                    }                    .pickerStyle(.segmented)
                 }
             }
             Section {
                 VStack(alignment: .leading) {
                     Text("Расположение слова на экране")
                     Picker("", selection: $settingsModel.defaultWordArrangement) {
-                        ForEach(settingsModel.wordArrangement, id: \.self) { word in
-                            Text(word)
-                                .tag(word)
+                        ForEach(WordsArrangements.allCases, id: \.self) { word in
+                            Text(word.rawValue.capitalized)
+                                .tag(word.rawValue)
                         }
                     }
                     .pickerStyle(.segmented)
@@ -109,6 +108,7 @@ struct CustomColorPiker: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(settingsModel: SettingsModel())
+        SettingsView()
+            .environmentObject(SettingsModel())
     }
 }

@@ -35,7 +35,7 @@ struct ContentView: View {
                 .padding(.horizontal, 48)
                 
                 HStack {
-                    OptionButton(image: "settings", destination: SettingsView(settingsModel: SettingsModel()))
+                    OptionButton(image: "settings", destination: SettingsView())
                     Spacer()
                     OptionButton(image: "question", destination: RulesView())
                 }
