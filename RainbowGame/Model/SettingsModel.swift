@@ -42,7 +42,7 @@ final class SettingsModel: ObservableObject {
         
     }
     
-    //: add backround color on View
+    //: Add backround color on View
     func backgroundColor(defaultColor: defaultBackgroundColors) -> some View {
         switch defaultColor {
         case .gray:

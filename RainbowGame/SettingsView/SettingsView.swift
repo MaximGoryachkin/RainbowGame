@@ -46,7 +46,7 @@ struct SettingsView: View {
             }
             Section {
                 HStack {
-                    Stepper("Размер букв", value: $settingsModel.sizeSymbol, step: 1)
+                    Stepper("Размер букв", value: $settingsModel.sizeSymbol, in: 14...22, step: 1)
                     Text("Aa")
                         .font(.system(size: settingsModel.sizeSymbol))
                 }
