@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum defaultBackgroundColors: String, CaseIterable {
+enum DefaultBackgroundColors: String, CaseIterable {
     case gray = "Cерый"
     case white = "Белый"
     case black = "Черный"
@@ -26,7 +26,7 @@ final class SettingsModel: ObservableObject {
     @AppStorage("backgroundSymbol") var backgroundSymbol: Bool = false
     @Published var wordsColors: [Color] = []
  
-    @AppStorage("defaultBackgroundColor") var defaultBackgroundColor = defaultBackgroundColors.gray
+    @AppStorage("defaultBackgroundColor") var defaultBackgroundColor = DefaultBackgroundColors.gray
     @AppStorage("defaultWordArrangement") var defaultWordArrangement = WordsArrangements.random
     
     var sizeSymbol: CGFloat {
@@ -42,18 +42,33 @@ final class SettingsModel: ObservableObject {
         
     }
     
-    //: add backround color on View
-    func backgroundColor(defaultColor: defaultBackgroundColors) -> some View {
+    //: Add backround color on View
+    func backgroundColor(defaultColor: DefaultBackgroundColors) -> some View {
         switch defaultColor {
         case .gray:
-            return Color.gray
+            return Color("GreyMode")
                 .edgesIgnoringSafeArea(.all)
         case .white:
             return Color.white
                 .edgesIgnoringSafeArea(.all)
         case .black:
-            return Color.black
+            return Color("NightMode")
                 .edgesIgnoringSafeArea(.all)
+        }
+    }
+    
+    //: Switch text color
+    func switchTextColor(colors: DefaultBackgroundColors, text: String) -> Text {
+        switch colors {
+        case .gray:
+            return Text(text)
+                .foregroundColor(Color.white)
+        case .white:
+            return Text(text)
+                .foregroundColor(Color.black)
+        case .black:
+            return Text(text)
+                .foregroundColor(Color.white)
         }
     }
     

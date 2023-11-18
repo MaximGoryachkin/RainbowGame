@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct RulesView: View {
-    
+    @EnvironmentObject var settingsModel: SettingsModel
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     
     var body: some View {
-        NavigationView {
                         
             ZStack {
-            
+                settingsModel.backgroundColor(defaultColor: settingsModel.defaultBackgroundColor)
                 
                 ScrollView {
                     VStack(alignment: .center, spacing: 16) {
@@ -98,8 +97,8 @@ struct RulesView: View {
             }
             .background(Color.gray)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            .navigationBarBackButtonHidden()
         }
-    }
 }
 
 struct RulesView_Previews: PreviewProvider {
