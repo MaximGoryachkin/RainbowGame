@@ -14,7 +14,7 @@ public struct SettingsState: Reducer, Equatable {
     var symbolColors: [Color]
     var colors: [String]
     
-    init(
+    public init(
         backgroundColors: [Color] = .init(),
         symbolColors: [Color] = .init(),
         colors: [String] = .init()

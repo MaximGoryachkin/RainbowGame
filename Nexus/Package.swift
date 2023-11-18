@@ -14,6 +14,8 @@ let package = Package(
         .library(name: "TimerService", targets: ["TimerService"]),
         .library(name: "QuestionService", targets: ["QuestionService"]),
         .library(name: "SoundService", targets: ["SoundService"]),
+        .library(name: "Redux", targets: ["Redux"]),
+        .library(name: "Core", targets: ["Core"]),
     ],
     targets: [
         .target(name: "Redux"),

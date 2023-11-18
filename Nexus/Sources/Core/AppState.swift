@@ -9,10 +9,10 @@ import Foundation
 import Redux
 
 public struct AppState: Reducer, Equatable {
-    var game: GameState
+    public var game: GameState
     var settings: SettingsState
     
-    init(
+    public init(
         game: GameState = .init(),
         settings: SettingsState = .init()
     ) {

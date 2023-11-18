@@ -9,8 +9,8 @@ import Foundation
 import Redux
 import Models
 
-enum GameActions {
-    struct TimerTick: Action {}
+public enum GameActions {
+    public struct TimerTick: Action { public init() {} }
     struct Play: Action {}
     struct Pause: Action {}
     

@@ -15,10 +15,10 @@ public struct GameState: Reducer, Equatable {
     var questions: [Question]
     var speed: GameSpeed
     var isGameCheckEnabled: Bool
-    var isPlaying: Bool
+    public var isPlaying: Bool
     
     //MARK: - init(_:)
-    init(
+    public init(
         timeAmount: Double = .init(),
         score: Int = .zero,
         questions: [Question] = .init(),
@@ -69,13 +69,13 @@ public struct GameState: Reducer, Equatable {
 
 extension GameState {
     //MARK: - GameSpeed
-    enum GameSpeed: Int {
+    public enum GameSpeed: Int {
         case x1 = 1
         case x2
         case x3
         case x4
         case x5
         
-        init() { self = .x1 }
+        public init() { self = .x1 }
     }
 }

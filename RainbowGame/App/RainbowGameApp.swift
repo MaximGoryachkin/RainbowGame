@@ -6,15 +6,39 @@
 //
 
 import SwiftUI
+import Core
+import Redux
+import OSLog
 
 @main
 struct RainbowGameApp: App {
-    private var settingsModel = SettingsModel()
+    private let settingsModel = SettingsModel()
+    private let store: Store<AppState>
+    private let timerDriver: TimerDriver
+    private let soundDriver: SoundDriver
     
+    //MARK: - body
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(settingsModel)
+            StoreProvider(store: store) {
+                ContentView()
+                    .environmentObject(settingsModel)
+            }
         }
+    }
+    
+    //MARK: - init(_:)
+    init() {
+        store = Store(
+            initial: AppState()
+        ) { state, action in
+            os_log(.debug, "Store:\t%@", String(describing: action))
+            state.reduce(action)
+        }
+        timerDriver = .init(store: store)
+        soundDriver = .init(store: store)
+        
+        store.subscribe(timerDriver.asObserver)
+        store.subscribe(soundDriver.asObserver)
     }
 }

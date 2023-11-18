@@ -14,6 +14,14 @@
 		121AD78A2B02A79500EE1C4A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121AD7892B02A79500EE1C4A /* SettingsView.swift */; };
 		129818212B091BF200C9B641 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129818202B091BF200C9B641 /* ArrayExtension.swift */; };
 		86000F962B0941400082361F /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86000F952B0941400082361F /* GameView.swift */; };
+		86000F982B0964B10082361F /* LoggerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86000F972B0964B10082361F /* LoggerExtension.swift */; };
+		86000F9B2B09656D0082361F /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 86000F9A2B09656D0082361F /* Core */; };
+		86000F9D2B0965710082361F /* Redux in Frameworks */ = {isa = PBXBuildFile; productRef = 86000F9C2B0965710082361F /* Redux */; };
+		86000F9F2B0967820082361F /* TimerDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86000F9E2B0967820082361F /* TimerDriver.swift */; };
+		86000FA12B0967E30082361F /* TimerService in Frameworks */ = {isa = PBXBuildFile; productRef = 86000FA02B0967E30082361F /* TimerService */; };
+		86000FA32B0967E80082361F /* QuestionService in Frameworks */ = {isa = PBXBuildFile; productRef = 86000FA22B0967E80082361F /* QuestionService */; };
+		86000FA52B0967EF0082361F /* SoundService in Frameworks */ = {isa = PBXBuildFile; productRef = 86000FA42B0967EF0082361F /* SoundService */; };
+		86000FA72B096C410082361F /* SoundDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86000FA62B096C410082361F /* SoundDriver.swift */; };
 		895DC0102B07D5C400276275 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895DC00F2B07D5C400276275 /* ResultView.swift */; };
 		895DC0122B07D80A00276275 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895DC0112B07D80A00276275 /* ColorExtension.swift */; };
 		895DC0142B07E80400276275 /* NavigationTitleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895DC0132B07E80400276275 /* NavigationTitleExtension.swift */; };
@@ -33,6 +41,9 @@
 		121AD7892B02A79500EE1C4A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		129818202B091BF200C9B641 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		86000F952B0941400082361F /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		86000F972B0964B10082361F /* LoggerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerExtension.swift; sourceTree = "<group>"; };
+		86000F9E2B0967820082361F /* TimerDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDriver.swift; sourceTree = "<group>"; };
+		86000FA62B096C410082361F /* SoundDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundDriver.swift; sourceTree = "<group>"; };
 		895DC00F2B07D5C400276275 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		895DC0112B07D80A00276275 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		895DC0132B07E80400276275 /* NavigationTitleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleExtension.swift; sourceTree = "<group>"; };
@@ -50,6 +61,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86000FA32B0967E80082361F /* QuestionService in Frameworks */,
+				86000FA12B0967E30082361F /* TimerService in Frameworks */,
+				86000F9B2B09656D0082361F /* Core in Frameworks */,
+				86000F9D2B0965710082361F /* Redux in Frameworks */,
+				86000FA52B0967EF0082361F /* SoundService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,8 +94,17 @@
 			isa = PBXGroup;
 			children = (
 				86000F952B0941400082361F /* GameView.swift */,
+				86000F9E2B0967820082361F /* TimerDriver.swift */,
+				86000FA62B096C410082361F /* SoundDriver.swift */,
 			);
 			path = GameView;
+			sourceTree = "<group>";
+		};
+		86000F992B09656D0082361F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		89407DA12B0109CF0002775A /* Support */ = {
@@ -90,6 +115,7 @@
 				895DC0112B07D80A00276275 /* ColorExtension.swift */,
 				895DC0132B07E80400276275 /* NavigationTitleExtension.swift */,
 				129818202B091BF200C9B641 /* ArrayExtension.swift */,
+				86000F972B0964B10082361F /* LoggerExtension.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -100,6 +126,7 @@
 				EED09AF22B03BC9200FF47ED /* Nexus */,
 				8994EFC62B00E1070022D8A4 /* RainbowGame */,
 				8994EFC52B00E1070022D8A4 /* Products */,
+				86000F992B09656D0082361F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,6 +218,13 @@
 			dependencies = (
 			);
 			name = RainbowGame;
+			packageProductDependencies = (
+				86000F9A2B09656D0082361F /* Core */,
+				86000F9C2B0965710082361F /* Redux */,
+				86000FA02B0967E30082361F /* TimerService */,
+				86000FA22B0967E80082361F /* QuestionService */,
+				86000FA42B0967EF0082361F /* SoundService */,
+			);
 			productName = RainbowGame;
 			productReference = 8994EFC42B00E1070022D8A4 /* RainbowGame.app */;
 			productType = "com.apple.product-type.application";
@@ -247,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DFB26582B02892D00893E2C /* MainButton.swift in Sources */,
+				86000FA72B096C410082361F /* SoundDriver.swift in Sources */,
 				0DA49CD52B0905F200B4BD1B /* ButtonAnimation.swift in Sources */,
 				B39124542B069BB2009BC96C /* RulesView.swift in Sources */,
 				129818212B091BF200C9B641 /* ArrayExtension.swift in Sources */,
@@ -254,11 +289,13 @@
 				895DC0122B07D80A00276275 /* ColorExtension.swift in Sources */,
 				8994EFCA2B00E1070022D8A4 /* ContentView.swift in Sources */,
 				0DFB265D2B02AD9C00893E2C /* OptionButton.swift in Sources */,
+				86000F982B0964B10082361F /* LoggerExtension.swift in Sources */,
 				895DC0102B07D5C400276275 /* ResultView.swift in Sources */,
 				0D0F092C2B06B4FD00FCAD88 /* SettingsModel.swift in Sources */,
 				895DC0142B07E80400276275 /* NavigationTitleExtension.swift in Sources */,
 				86000F962B0941400082361F /* GameView.swift in Sources */,
 				8994EFC82B00E1070022D8A4 /* RainbowGameApp.swift in Sources */,
+				86000F9F2B0967820082361F /* TimerDriver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +511,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		86000F9A2B09656D0082361F /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
+		};
+		86000F9C2B0965710082361F /* Redux */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Redux;
+		};
+		86000FA02B0967E30082361F /* TimerService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TimerService;
+		};
+		86000FA22B0967E80082361F /* QuestionService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = QuestionService;
+		};
+		86000FA42B0967EF0082361F /* SoundService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SoundService;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8994EFBC2B00E1070022D8A4 /* Project object */;
 }
