@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct SpecialNavBar: ViewModifier {
-    init() {
+    init(color: UIColor) {
         // this is not the same as manipulating the proxy directly
         let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = color
         
         // this overrides everything you have set up earlier.
-        appearance.configureWithTransparentBackground()
+//        appearance.configureWithTransparentBackground()
         
         // this only applies to big titles
         appearance.largeTitleTextAttributes = [
@@ -36,7 +37,7 @@ struct SpecialNavBar: ViewModifier {
 }
 
 extension View {
-    func specialNavBar() -> some View {
-        self.modifier(SpecialNavBar())
+    func specialNavBar(with color: Color) -> some View {
+        self.modifier(SpecialNavBar(color: UIColor(color)))
     }
 }

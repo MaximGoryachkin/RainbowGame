@@ -14,7 +14,7 @@ struct RulesView: View {
     var body: some View {
                         
             ZStack {
-                settingsModel.backgroundColor(defaultColor: settingsModel.defaultBackgroundColor)
+                settingsModel.backgroundColor()
                 
                 ScrollView {
                     VStack(alignment: .center, spacing: 16) {
