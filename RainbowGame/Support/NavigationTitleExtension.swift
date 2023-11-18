@@ -14,12 +14,8 @@ struct SpecialNavBar: ViewModifier {
         appearance.backgroundColor = color
         
         // this overrides everything you have set up earlier.
-//        appearance.configureWithTransparentBackground()
+        appearance.configureWithTransparentBackground()
         
-        // this only applies to big titles
-        appearance.largeTitleTextAttributes = [
-            .font : UIFont.systemFont(ofSize: 30)
-        ]
         // this only applies to small titles
         appearance.titleTextAttributes = [
             .font : UIFont.systemFont(ofSize: 30)
@@ -37,7 +33,13 @@ struct SpecialNavBar: ViewModifier {
 }
 
 extension View {
-    func specialNavBar(with color: Color) -> some View {
-        self.modifier(SpecialNavBar(color: UIColor(color)))
+    func specialNavBar(with color: Color, complition: @escaping () -> Void) -> some View {
+        self
+            .modifier(SpecialNavBar(color: UIColor(color)))
+            .navigationBarBackButtonHidden()
+            .navigationBarItems(leading: Button(action: complition, label: {
+                Image(systemName: "arrow.left")
+                    .font(.title)
+            }))
     }
 }

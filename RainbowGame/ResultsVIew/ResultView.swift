@@ -52,6 +52,7 @@ struct ResultView: View {
     ]
     
     @EnvironmentObject private var settingsObject: SettingsModel
+    @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     
     var body: some View {
         VStack {
@@ -99,7 +100,9 @@ struct ResultView: View {
         }
         .shadow(color: Color.black.opacity(0.2), radius: 3, y: 6)
         .navigationTitle("Статистика")
-        .specialNavBar(with: settingsObject.currentBackground)
+        .specialNavBar(with: settingsObject.currentBackground, complition: {
+            presentationMode.wrappedValue.dismiss()
+        })
         .preferredColorScheme(settingsObject.colorScheme)
         .background(settingsObject.backgroundColor())
     }
