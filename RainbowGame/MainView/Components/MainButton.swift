@@ -7,19 +7,20 @@
 
 import SwiftUI
 
-struct MainButton: View {
+struct MainButton<Destination: View>: View {
     var text: String
     var color: Color
-    var destination: EmptyView
+    var destination: Destination
     
     var body: some View {
         NavigationLink(destination: destination) {
             Text(text)
-                .font(.system(size: 20))
+                .font(.system(size: 20, weight: .semibold, design: .rounded))
                 .foregroundStyle(.white)
                 .padding(.vertical, 31)
         }
         .frame(maxWidth: .infinity)
+        .buttonStyle(ButtonAnimation())
         .padding(.horizontal, 20)
         .background(color)
         .cornerRadius(10)
