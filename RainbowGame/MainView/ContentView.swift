@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                settingsModel.backgroundColor(defaultColor: settingsModel.defaultBackgroundColor)
+                settingsModel.backgroundColor()
                 VStack {
                     Image("pngwing")
                         .resizable()
