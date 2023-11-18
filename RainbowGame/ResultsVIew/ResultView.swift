@@ -84,7 +84,7 @@ struct ResultView: View {
             }
             .listStyle(.plain)
             .padding()
-            .listRowSpacing(25)
+//            .listRowSpacing(25)
             
             Button {
                 // очищает статистику
@@ -108,7 +108,7 @@ struct ResultView: View {
     }
 }
 
-#Preview {
-    ResultView()
-        .environmentObject(SettingsModel())
-}
+//#Preview {
+//    ResultView()
+//        .environmentObject(SettingsModel())
+//}
