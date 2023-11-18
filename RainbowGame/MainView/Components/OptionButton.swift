@@ -14,7 +14,11 @@ struct OptionButton<Destination: View>: View {
     var body: some View {
         NavigationLink(destination: destination) {
             Image(image)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 50, height: 50)
         }
+        .buttonStyle(ButtonAnimation())
         .shadow(color: Color.black.opacity(0.2), radius: 3, y: 6)
     }
 }

@@ -90,7 +90,22 @@ final class SettingsModel: ObservableObject {
         }
     }
     
-    func colorPicker(check: String) {
+    var colorScheme: ColorScheme {
+        defaultBackgroundColor == .black ? .dark : .light
+    }
+    
+    var currentBackground: Color {
+        switch defaultBackgroundColor {
+        case .gray:
+            return Color("GreyMode")
+        case .white:
+            return Color.white
+        case .black:
+            return Color("NightMode")
+        }
+    }
+    
+    func colorPicker(check: UIColor) {
         
         if selectColors.contains(check) {
             selectColors.removeAll { $0 == check}
@@ -100,8 +115,8 @@ final class SettingsModel: ObservableObject {
     }
     
     //: Add backround color on View
-    func backgroundColor(defaultColor: DefaultBackgroundColors) -> some View {
-        switch defaultColor {
+    func backgroundColor() -> some View {
+        switch defaultBackgroundColor {
         case .gray:
             return Color("GreyMode")
                 .edgesIgnoringSafeArea(.all)
@@ -113,6 +128,7 @@ final class SettingsModel: ObservableObject {
                 .edgesIgnoringSafeArea(.all)
         }
     }
+    
     
     //: Switch text color
     func switchTextColor(colors: DefaultBackgroundColors, text: String) -> Text {
@@ -128,5 +144,5 @@ final class SettingsModel: ObservableObject {
                 .foregroundColor(Color.white)
         }
     }
-    
+
 }

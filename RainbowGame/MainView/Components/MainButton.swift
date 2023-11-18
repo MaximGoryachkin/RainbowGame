@@ -20,6 +20,7 @@ struct MainButton<Destination: View>: View {
                 .padding(.vertical, 31)
         }
         .frame(maxWidth: .infinity)
+        .buttonStyle(ButtonAnimation())
         .padding(.horizontal, 20)
         .background(color)
         .cornerRadius(10)

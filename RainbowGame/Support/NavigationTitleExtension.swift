@@ -8,17 +8,14 @@
 import SwiftUI
 
 struct SpecialNavBar: ViewModifier {
-    init() {
+    init(color: UIColor) {
         // this is not the same as manipulating the proxy directly
         let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = color
         
         // this overrides everything you have set up earlier.
         appearance.configureWithTransparentBackground()
         
-        // this only applies to big titles
-        appearance.largeTitleTextAttributes = [
-            .font : UIFont.systemFont(ofSize: 30)
-        ]
         // this only applies to small titles
         appearance.titleTextAttributes = [
             .font : UIFont.systemFont(ofSize: 30)
@@ -36,7 +33,13 @@ struct SpecialNavBar: ViewModifier {
 }
 
 extension View {
-    func specialNavBar() -> some View {
-        self.modifier(SpecialNavBar())
+    func specialNavBar(with color: Color, complition: @escaping () -> Void) -> some View {
+        self
+            .modifier(SpecialNavBar(color: UIColor(color)))
+            .navigationBarBackButtonHidden()
+            .navigationBarItems(leading: Button(action: complition, label: {
+                Image(systemName: "arrow.left")
+                    .font(.title)
+            }))
     }
 }

@@ -14,4 +14,8 @@ extension ShapeStyle where Self == Color {
     static var resultTitle: Color {
             Color(red: 136/255, green: 236/255, blue: 9/255)
         }
+    static var rulesTitle: Color {
+            Color(red: 190/255, green: 46/255, blue: 106/255)
+        }
 }
+
