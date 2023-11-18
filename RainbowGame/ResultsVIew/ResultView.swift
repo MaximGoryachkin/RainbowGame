@@ -108,8 +108,6 @@ struct ResultView: View {
     }
 }
 
-
-
 #Preview {
     ResultView()
         .environmentObject(SettingsModel())

@@ -23,6 +23,6 @@ struct OptionButton<Destination: View>: View {
     }
 }
 
-#Preview {
-    OptionButton(image: "settings", destination: EmptyView())
-}
+//#Preview {
+//    OptionButton(image: "settings", destination: EmptyView())
+//}
