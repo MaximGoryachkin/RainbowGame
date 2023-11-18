@@ -22,19 +22,19 @@ public struct GameNode {
     
     //MARK: - interface
     var timeAmount: Double {
-        get { graph.state.timeAmount }
+        get { graph.timeAmount }
         nonmutating set { graph.dispatch(GameActions.SetTimeAmount(newValue)) }
     }
     
-    public var isPlaying: Bool { graph.state.isPlaying }
+    public var isPlaying: Bool { graph.isPlaying }
     
     public var questions: [Question] {
-        get { graph.state.questions }
+        get { graph.questions }
         nonmutating set { graph.dispatch(GameActions.AddQuestions(newValue)) }
     }
     
     var speed: GameState.GameSpeed {
-        get { graph.state.speed }
+        get { graph.speed }
         nonmutating set { graph.dispatch(GameActions.ChangeSpeed(newValue)) }
     }
     

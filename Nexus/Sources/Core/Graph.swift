@@ -8,8 +8,9 @@
 import Foundation
 import Redux
 
+@dynamicMemberLookup
 public struct Graph: Equatable {
-    let state: GameState
+    private let state: GameState
     let dispatch: (Action) -> Void
     
     //MARK: - init(_:)
@@ -23,5 +24,9 @@ public struct Graph: Equatable {
     
     public static func == (lhs: Graph, rhs: Graph) -> Bool {
         lhs.state == rhs.state
+    }
+    
+    subscript<T>(dynamicMember keyPath: KeyPath<GameState, T>) -> T {
+        state[keyPath: keyPath]
     }
 }
