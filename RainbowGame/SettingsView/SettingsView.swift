@@ -45,6 +45,7 @@ struct SettingsView: View {
                     CustomColorPiker()
                 }
             }
+    
             Section {
                 HStack {
                     Stepper("Размер букв", value: $settingsModel.sizeSymbol, in: 17...22, step: 1)
