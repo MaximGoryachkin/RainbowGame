@@ -63,9 +63,9 @@ struct SettingsView: View {
                 
                 Section("") {
                     HStack {
-                        Stepper("Размер букв", value: $settingsModel.sizeSymbol, in: 17...22, step: 1)
+                        Stepper("Размер букв", value: $settingsModel.fontSize, in: 17...22, step: 1)
                         Text("Aa")
-                            .font(.system(size: settingsModel.sizeSymbol))
+                            .font(.system(size: settingsModel.fontSize))
                     }
                 }
                 .listRowBackground(
@@ -75,7 +75,7 @@ struct SettingsView: View {
                 Section("") {
                     HStack {
                         Text("Подложка для букв")
-                        Toggle(isOn: $settingsModel.backgroundSymbol) {
+                        Toggle(isOn: $settingsModel.isCellBackgroundEnabled) {
                         }
                         .tint(Color.orange)
                     }

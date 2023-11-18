@@ -22,6 +22,11 @@
 		86000FA32B0967E80082361F /* QuestionService in Frameworks */ = {isa = PBXBuildFile; productRef = 86000FA22B0967E80082361F /* QuestionService */; };
 		86000FA52B0967EF0082361F /* SoundService in Frameworks */ = {isa = PBXBuildFile; productRef = 86000FA42B0967EF0082361F /* SoundService */; };
 		86000FA72B096C410082361F /* SoundDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86000FA62B096C410082361F /* SoundDriver.swift */; };
+		86000FAA2B0973170082361F /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86000FA92B0973170082361F /* BackButton.swift */; };
+		86000FAC2B097A880082361F /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86000FAB2B097A880082361F /* QuestionCell.swift */; };
+		86000FAE2B09834D0082361F /* CheckboxIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86000FAD2B09834D0082361F /* CheckboxIOS.swift */; };
+		86000FB02B09839F0082361F /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 86000FAF2B09839F0082361F /* Models */; };
+		86000FB22B0985B50082361F /* SpeedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86000FB12B0985B50082361F /* SpeedButton.swift */; };
 		895DC0102B07D5C400276275 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895DC00F2B07D5C400276275 /* ResultView.swift */; };
 		895DC0122B07D80A00276275 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895DC0112B07D80A00276275 /* ColorExtension.swift */; };
 		895DC0142B07E80400276275 /* NavigationTitleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895DC0132B07E80400276275 /* NavigationTitleExtension.swift */; };
@@ -44,6 +49,10 @@
 		86000F972B0964B10082361F /* LoggerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerExtension.swift; sourceTree = "<group>"; };
 		86000F9E2B0967820082361F /* TimerDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDriver.swift; sourceTree = "<group>"; };
 		86000FA62B096C410082361F /* SoundDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundDriver.swift; sourceTree = "<group>"; };
+		86000FA92B0973170082361F /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		86000FAB2B097A880082361F /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
+		86000FAD2B09834D0082361F /* CheckboxIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxIOS.swift; sourceTree = "<group>"; };
+		86000FB12B0985B50082361F /* SpeedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedButton.swift; sourceTree = "<group>"; };
 		895DC00F2B07D5C400276275 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		895DC0112B07D80A00276275 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		895DC0132B07E80400276275 /* NavigationTitleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleExtension.swift; sourceTree = "<group>"; };
@@ -61,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86000FB02B09839F0082361F /* Models in Frameworks */,
 				86000FA32B0967E80082361F /* QuestionService in Frameworks */,
 				86000FA12B0967E30082361F /* TimerService in Frameworks */,
 				86000F9B2B09656D0082361F /* Core in Frameworks */,
@@ -93,6 +103,7 @@
 		86000F942B09412D0082361F /* GameView */ = {
 			isa = PBXGroup;
 			children = (
+				86000FA82B0973010082361F /* Subviews */,
 				86000F952B0941400082361F /* GameView.swift */,
 				86000F9E2B0967820082361F /* TimerDriver.swift */,
 				86000FA62B096C410082361F /* SoundDriver.swift */,
@@ -105,6 +116,17 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		86000FA82B0973010082361F /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				86000FA92B0973170082361F /* BackButton.swift */,
+				86000FAB2B097A880082361F /* QuestionCell.swift */,
+				86000FAD2B09834D0082361F /* CheckboxIOS.swift */,
+				86000FB12B0985B50082361F /* SpeedButton.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		89407DA12B0109CF0002775A /* Support */ = {
@@ -224,6 +246,7 @@
 				86000FA02B0967E30082361F /* TimerService */,
 				86000FA22B0967E80082361F /* QuestionService */,
 				86000FA42B0967EF0082361F /* SoundService */,
+				86000FAF2B09839F0082361F /* Models */,
 			);
 			productName = RainbowGame;
 			productReference = 8994EFC42B00E1070022D8A4 /* RainbowGame.app */;
@@ -286,14 +309,18 @@
 				B39124542B069BB2009BC96C /* RulesView.swift in Sources */,
 				129818212B091BF200C9B641 /* ArrayExtension.swift in Sources */,
 				121AD78A2B02A79500EE1C4A /* SettingsView.swift in Sources */,
+				86000FAA2B0973170082361F /* BackButton.swift in Sources */,
 				895DC0122B07D80A00276275 /* ColorExtension.swift in Sources */,
 				8994EFCA2B00E1070022D8A4 /* ContentView.swift in Sources */,
+				86000FAE2B09834D0082361F /* CheckboxIOS.swift in Sources */,
 				0DFB265D2B02AD9C00893E2C /* OptionButton.swift in Sources */,
 				86000F982B0964B10082361F /* LoggerExtension.swift in Sources */,
 				895DC0102B07D5C400276275 /* ResultView.swift in Sources */,
 				0D0F092C2B06B4FD00FCAD88 /* SettingsModel.swift in Sources */,
 				895DC0142B07E80400276275 /* NavigationTitleExtension.swift in Sources */,
 				86000F962B0941400082361F /* GameView.swift in Sources */,
+				86000FAC2B097A880082361F /* QuestionCell.swift in Sources */,
+				86000FB22B0985B50082361F /* SpeedButton.swift in Sources */,
 				8994EFC82B00E1070022D8A4 /* RainbowGameApp.swift in Sources */,
 				86000F9F2B0967820082361F /* TimerDriver.swift in Sources */,
 			);
@@ -532,6 +559,10 @@
 		86000FA42B0967EF0082361F /* SoundService */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SoundService;
+		};
+		86000FAF2B09839F0082361F /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
