@@ -12,6 +12,7 @@ public struct Question: Equatable, Identifiable {
     public let id: ID
     public var isAnswered: Bool
     public let colorName: String
+    public let symbolColor: Color
     public let backgroundColor: Color
     
     //MARK: - init(_:)
@@ -19,11 +20,13 @@ public struct Question: Equatable, Identifiable {
         id: ID = .init(id: UUID()),
         isAnswered: Bool = false,
         colorName: String = .init(),
+        symbolColor: Color = .clear,
         backgroundColor: Color = .clear
     ) {
         self.id = id
         self.isAnswered = isAnswered
         self.colorName = colorName
+        self.symbolColor = symbolColor
         self.backgroundColor = backgroundColor
     }
     

@@ -9,7 +9,7 @@ import Foundation
 import Models
 
 extension Graph {
-    public var game: GameNode { .init(graph: self) }
+    public var gameNode: GameNode { .init(graph: self) }
 }
 
 public struct GameNode {
@@ -22,19 +22,19 @@ public struct GameNode {
     
     //MARK: - interface
     var timeAmount: Double {
-        get { graph.timeAmount }
+        get { graph.game.timeAmount }
         nonmutating set { graph.dispatch(GameActions.SetTimeAmount(newValue)) }
     }
     
-    public var isPlaying: Bool { graph.isPlaying }
+    public var isPlaying: Bool { graph.game.isPlaying }
     
     public var questions: [Question] {
-        get { graph.questions }
+        get { graph.game.questions }
         nonmutating set { graph.dispatch(GameActions.AddQuestions(newValue)) }
     }
     
     var speed: GameState.GameSpeed {
-        get { graph.speed }
+        get { graph.game.speed }
         nonmutating set { graph.dispatch(GameActions.ChangeSpeed(newValue)) }
     }
     

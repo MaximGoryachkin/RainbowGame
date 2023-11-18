@@ -10,12 +10,12 @@ import Redux
 
 @dynamicMemberLookup
 public struct Graph: Equatable {
-    private let state: GameState
+    private let state: AppState
     let dispatch: (Action) -> Void
     
     //MARK: - init(_:)
     init(
-        _ state: GameState,
+        _ state: AppState,
         dispatch: @escaping (Action) -> Void
     ) {
         self.state = state
@@ -26,7 +26,7 @@ public struct Graph: Equatable {
         lhs.state == rhs.state
     }
     
-    subscript<T>(dynamicMember keyPath: KeyPath<GameState, T>) -> T {
+    subscript<T>(dynamicMember keyPath: KeyPath<AppState, T>) -> T {
         state[keyPath: keyPath]
     }
 }
