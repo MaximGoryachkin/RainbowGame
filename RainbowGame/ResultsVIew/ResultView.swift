@@ -67,6 +67,6 @@ struct ResultView: View {
 }
 
 
-#Preview {
-    ResultView()
-}
+//#Preview {
+//    ResultView()
+//}
