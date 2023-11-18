@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var settingsModel: SettingsModel
-    @State private var isBombAnimating = false
+    @State private var isRainbowAnimating = false
     var body: some View {
         NavigationView {
             ZStack {
@@ -19,11 +19,11 @@ struct ContentView: View {
                         .resizable()
                         .scaledToFit()
                         .padding(.horizontal, 35)
-                        .scaleEffect(isBombAnimating ? 0.90 : 1)
+                        .scaleEffect(isRainbowAnimating ? 0.90 : 1)
                         .animation(Animation.easeInOut(duration: 2.7)
-                            .repeatForever(autoreverses: true), value: isBombAnimating)
+                            .repeatForever(autoreverses: true), value: isRainbowAnimating)
                         .onAppear() {
-                            self.isBombAnimating = true
+                            self.isRainbowAnimating = true
                         }
                     
                     VStack(spacing: 16) {

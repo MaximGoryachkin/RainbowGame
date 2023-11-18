@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D0F092C2B06B4FD00FCAD88 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F092B2B06B4FD00FCAD88 /* SettingsModel.swift */; };
+		0DA49CD52B0905F200B4BD1B /* ButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA49CD42B0905F200B4BD1B /* ButtonAnimation.swift */; };
 		0DFB26582B02892D00893E2C /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB26572B02892D00893E2C /* MainButton.swift */; };
 		0DFB265D2B02AD9C00893E2C /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB265C2B02AD9C00893E2C /* OptionButton.swift */; };
 		121AD78A2B02A79500EE1C4A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121AD7892B02A79500EE1C4A /* SettingsView.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		0D0F092B2B06B4FD00FCAD88 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		0DA49CD42B0905F200B4BD1B /* ButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnimation.swift; sourceTree = "<group>"; };
 		0DFB26572B02892D00893E2C /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		0DFB265C2B02AD9C00893E2C /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
 		121AD7892B02A79500EE1C4A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				0DFB26572B02892D00893E2C /* MainButton.swift */,
+				0DA49CD42B0905F200B4BD1B /* ButtonAnimation.swift */,
 				0DFB265C2B02AD9C00893E2C /* OptionButton.swift */,
 			);
 			path = Components;
@@ -238,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DFB26582B02892D00893E2C /* MainButton.swift in Sources */,
+				0DA49CD52B0905F200B4BD1B /* ButtonAnimation.swift in Sources */,
 				B39124542B069BB2009BC96C /* RulesView.swift in Sources */,
 				121AD78A2B02A79500EE1C4A /* SettingsView.swift in Sources */,
 				895DC0122B07D80A00276275 /* ColorExtension.swift in Sources */,
