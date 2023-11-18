@@ -70,10 +70,9 @@ final class SettingsModel: ObservableObject {
     @AppStorage("checkedTask") var isCheckedTask: Bool = false
     @AppStorage("sizeSymbol") var sizeSymbolRow: Double = 12
     @AppStorage("backgroundSymbol") var backgroundSymbol: Bool = false
-    let colors: [Color] = [Color(#colorLiteral(red: 0.2687206566, green: 0.9995030761, blue: 0.01149730664, alpha: 1)), Color(#colorLiteral(red: 0.1451833546, green: 0.2311671376, blue: 0.0077144932, alpha: 1)), Color(#colorLiteral(red: 0.9977900386, green: 0.04541384429, blue: 0.6776584983, alpha: 1)), Color(#colorLiteral(red: 0.0263477359, green: 0.7645197511, blue: 0.9987017512, alpha: 1)), Color(#colorLiteral(red: 0.3764151931, green: 0.04249276966, blue: 0.04174341261, alpha: 1)), Color(#colorLiteral(red: 0.8028036952, green: 0.01320633199, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.2728972733, green: 0.02314549498, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.9394053221, green: 0.4673838019, blue: 0.03500909731, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.02322942391, blue: 0.01790534705, alpha: 1)), Color(#colorLiteral(red: 0.9982356429, green: 0.8419904709, blue: 0.03334137425, alpha: 1)), Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)), Color(#colorLiteral(red: 0.3674305081, green: 0.3276185393, blue: 0.3588675261, alpha: 1))]
-    
-    let newColor: [SelectColor] = [SelectColor.geen, SelectColor.darckGreen, SelectColor.ping, SelectColor.lightBlue, SelectColor.darckRed, SelectColor.purpure, SelectColor.blue, SelectColor.orange, SelectColor.red, SelectColor.yellow, SelectColor.black, SelectColor.darckGray]
-    @Published var selectColors: [String] = []
+
+    let colors: [SelectColor] = [SelectColor.geen, SelectColor.darckGreen, SelectColor.ping, SelectColor.lightBlue, SelectColor.darckRed, SelectColor.purpure, SelectColor.blue, SelectColor.orange, SelectColor.red, SelectColor.yellow, SelectColor.black, SelectColor.darckGray]
+    @AppStorage("selectColor") var selectColors: [String] = []
     
     
 //    @AppStorage("colorsArray") var colorsArray: [String] = [String]()
@@ -105,7 +104,7 @@ final class SettingsModel: ObservableObject {
         }
     }
     
-    func colorPicker(check: UIColor) {
+    func colorPicker(check: String) {
         
         if selectColors.contains(check) {
             selectColors.removeAll { $0 == check}

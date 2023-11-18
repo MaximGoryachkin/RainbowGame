@@ -14,7 +14,7 @@ struct SettingsView: View {
     
     var body: some View {
         ZStack {
-            settingsModel.backgroundColor(defaultColor: settingsModel.defaultBackgroundColor)
+            settingsModel.backgroundColor()
             List {
                 Section("") {
                     HStack {
@@ -139,9 +139,10 @@ struct CustomColorPiker: View {
             Text("Цвет букв")
             Spacer()
             LazyHGrid(rows: colums) {
-                ForEach(settingsModel.newColor, id: \.self) { item in
+                ForEach(settingsModel.colors, id: \.self) { item in
                     
-                    Image(systemName: settingsModel.selectColors.contains(item.rawValue) ? "checkmark.circle.fill" : "circle.fill")
+                    Image(systemName:
+                            settingsModel.selectColors.contains(item.rawValue) ? "checkmark.circle.fill" : "circle.fill")
                         .resizable()
                         .frame(width: 25, height: 25)
                         .foregroundColor(item.color)

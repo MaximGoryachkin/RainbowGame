@@ -59,7 +59,7 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-        .environmentObject(SettingsModel())
-}
+//#Preview {
+//    ContentView()
+//        .environmentObject(SettingsModel())
+//}
