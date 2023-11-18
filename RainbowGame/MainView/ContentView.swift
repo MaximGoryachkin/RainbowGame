@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var settingsModel: SettingsModel
+    @State private var isBombAnimating = false
     var body: some View {
         NavigationView {
             ZStack {
@@ -18,6 +19,12 @@ struct ContentView: View {
                         .resizable()
                         .scaledToFit()
                         .padding(.horizontal, 35)
+                        .scaleEffect(isBombAnimating ? 0.90 : 1)
+                        .animation(Animation.easeInOut(duration: 2.7)
+                            .repeatForever(autoreverses: true), value: isBombAnimating)
+                        .onAppear() {
+                            self.isBombAnimating = true
+                        }
                     
                     VStack(spacing: 16) {
                         settingsModel.switchTextColor(colors: settingsModel.defaultBackgroundColor, text: "НЛП Игра")
@@ -41,16 +48,18 @@ struct ContentView: View {
                         OptionButton(image: "settings", destination: SettingsView())
                         Spacer()
                         OptionButton(image: "question", destination: RulesView())
+                           
                     }
                     .padding(.top, 30)
-                    .padding(.horizontal, 28)
-                    .shadow(color: Color.black.opacity(0.2), radius: 3, y: 6)
+                    .padding(.horizontal, 40)
+                    .offset(x: 6)
                 }
             }
         }
     }
 }
 
-//#Preview {
-//    ContentView()
-//}
+#Preview {
+    ContentView()
+        .environmentObject(SettingsModel())
+}

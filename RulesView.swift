@@ -104,5 +104,6 @@ struct RulesView: View {
 struct RulesView_Previews: PreviewProvider {
     static var previews: some View {
         RulesView()
+            .environmentObject(SettingsModel())
     }
 }
