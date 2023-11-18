@@ -12,7 +12,7 @@ import Models
 public struct GameState: Reducer, Equatable {
     var timeAmount: Double
     var score: Int
-    var questions: [Question.ID: Question]
+    var questions: [Question]
     var speed: GameSpeed
     var isGameCheckEnabled: Bool
     var isPlaying: Bool
@@ -21,7 +21,7 @@ public struct GameState: Reducer, Equatable {
     init(
         timeAmount: Double = .init(),
         score: Int = .zero,
-        questions: [Question.ID: Question] = .init(),
+        questions: [Question] = .init(),
         speed: GameSpeed = .init(),
         isGameCheckEnabled: Bool = false,
         isPlaying: Bool = false
@@ -41,9 +41,7 @@ public struct GameState: Reducer, Equatable {
             timeAmount = action.time
             
         case let action as GameActions.AddQuestions:
-            action.questions.forEach { question in
-                questions.updateValue(question, forKey: question.id)
-            }
+            questions = action.questions
             
         case is GameActions.TimerTick:
             timeAmount -= 1
@@ -55,15 +53,11 @@ public struct GameState: Reducer, Equatable {
             isPlaying = false
             
         case let action as GameActions.DidTapQuestionId:
-            guard let tappedQuestion = questions.removeValue(forKey: action.id) else {
+            guard let questionIndex = questions.firstIndex(where: { $0.id == action.id }) else {
                 assertionFailure("Всегда должен быть элемент по тапу")
                 return
             }
-            let answeredQuestion = Question(
-                id: tappedQuestion.id,
-                isAnswered: true
-            )
-            questions.updateValue(answeredQuestion, forKey: answeredQuestion.id)
+            questions[questionIndex].isAnswered = true
             
         case let action as GameActions.ChangeSpeed:
             speed = action.speed

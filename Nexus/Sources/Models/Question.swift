@@ -10,7 +10,7 @@ import SwiftUI
 
 public struct Question: Equatable, Identifiable {
     public let id: ID
-    public let isAnswered: Bool
+    public var isAnswered: Bool
     public let colorName: String
     public let backgroundColor: Color
     

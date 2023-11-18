@@ -13,6 +13,7 @@
 		0DFB265D2B02AD9C00893E2C /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB265C2B02AD9C00893E2C /* OptionButton.swift */; };
 		121AD78A2B02A79500EE1C4A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121AD7892B02A79500EE1C4A /* SettingsView.swift */; };
 		129818212B091BF200C9B641 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129818202B091BF200C9B641 /* ArrayExtension.swift */; };
+		86000F962B0941400082361F /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86000F952B0941400082361F /* GameView.swift */; };
 		895DC0102B07D5C400276275 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895DC00F2B07D5C400276275 /* ResultView.swift */; };
 		895DC0122B07D80A00276275 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895DC0112B07D80A00276275 /* ColorExtension.swift */; };
 		895DC0142B07E80400276275 /* NavigationTitleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895DC0132B07E80400276275 /* NavigationTitleExtension.swift */; };
@@ -31,6 +32,7 @@
 		0DFB265C2B02AD9C00893E2C /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
 		121AD7892B02A79500EE1C4A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		129818202B091BF200C9B641 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		86000F952B0941400082361F /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		895DC00F2B07D5C400276275 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		895DC0112B07D80A00276275 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		895DC0132B07E80400276275 /* NavigationTitleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleExtension.swift; sourceTree = "<group>"; };
@@ -72,6 +74,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		86000F942B09412D0082361F /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				86000F952B0941400082361F /* GameView.swift */,
+			);
+			path = GameView;
+			sourceTree = "<group>";
+		};
 		89407DA12B0109CF0002775A /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 		8994EFC62B00E1070022D8A4 /* RainbowGame */ = {
 			isa = PBXGroup;
 			children = (
+				86000F942B09412D0082361F /* GameView */,
 				8994EFDA2B00FFA00022D8A4 /* App */,
 				0D0F092D2B06B50300FCAD88 /* Model */,
 				8994EFD52B00E77C0022D8A4 /* MainView */,
@@ -246,6 +257,7 @@
 				895DC0102B07D5C400276275 /* ResultView.swift in Sources */,
 				0D0F092C2B06B4FD00FCAD88 /* SettingsModel.swift in Sources */,
 				895DC0142B07E80400276275 /* NavigationTitleExtension.swift in Sources */,
+				86000F962B0941400082361F /* GameView.swift in Sources */,
 				8994EFC82B00E1070022D8A4 /* RainbowGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -70,7 +70,7 @@ final class GameStateTests: XCTestCase {
         let questions = [Question()]
         sut.reduce(GameActions.AddQuestions(questions))
         
-        XCTAssertEqual(sut.questions.map(\.value), questions)
+        XCTAssertEqual(sut.questions, questions)
     }
     
     func test_reduceDidTapQuestionWithId_() {
@@ -79,7 +79,7 @@ final class GameStateTests: XCTestCase {
         
         sut.reduce(GameActions.DidTapQuestionId(question.id))
         
-        guard let tappedQuestion = sut.questions.removeValue(forKey: question.id) else {
+        guard let tappedQuestion = sut.questions.first(where: { $0.id == question.id }) else {
             XCTFail("Invalid Setup")
             return
         }

@@ -29,7 +29,7 @@ public struct GameNode {
     public var isPlaying: Bool { graph.state.isPlaying }
     
     public var questions: [Question] {
-        get { graph.state.questions.map(\.value) }
+        get { graph.state.questions }
         nonmutating set { graph.dispatch(GameActions.AddQuestions(newValue)) }
     }
     
