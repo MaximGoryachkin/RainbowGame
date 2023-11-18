@@ -11,14 +11,14 @@ let package = Package(
     ],
     products: [
         .library(name: "GameModule", targets: ["GameModule"]),
-        .library(name: "TimerDriver", targets: ["TimerDriver"]),
+        .library(name: "TimerService", targets: ["TimerService"]),
         .library(name: "QuestionDriver", targets: ["QuestionDriver"]),
         .library(name: "SoundDriver", targets: ["SoundDriver"]),
     ],
     targets: [
         .target(name: "Redux"),
         .target(name: "Models"),
-        .target(name: "TimerDriver", dependencies: ["Core"]),
+        .target(name: "TimerService"),
         .target(
             name: "SoundDriver",
             dependencies: ["Core"],
