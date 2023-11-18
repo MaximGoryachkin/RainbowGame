@@ -81,6 +81,7 @@ struct RulesView: View {
         }
         .preferredColorScheme(settingsModel.colorScheme)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+    }
 }
 
 struct RulesView_Previews: PreviewProvider {
@@ -90,8 +91,3 @@ struct RulesView_Previews: PreviewProvider {
     }
 }
 
-//struct RulesView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RulesView()
-//    }
-//}
