@@ -12,24 +12,20 @@ let package = Package(
     products: [
         .library(name: "GameModule", targets: ["GameModule"]),
         .library(name: "TimerService", targets: ["TimerService"]),
-        .library(name: "QuestionDriver", targets: ["QuestionDriver"]),
-        .library(name: "SoundDriver", targets: ["SoundDriver"]),
+        .library(name: "QuestionService", targets: ["QuestionService"]),
+        .library(name: "SoundService", targets: ["SoundService"]),
     ],
     targets: [
         .target(name: "Redux"),
         .target(name: "Models"),
         .target(name: "TimerService"),
         .target(
-            name: "SoundDriver",
-            dependencies: ["Core"],
+            name: "SoundService",
             resources: [.process("Resources")]
         ),
         .target(
-            name: "QuestionDriver",
-            dependencies: [
-                "Core",
-                "Models",
-            ]),
+            name: "QuestionService",
+            dependencies: ["Models"]),
         .target(
             name: "Core",
             dependencies: [
