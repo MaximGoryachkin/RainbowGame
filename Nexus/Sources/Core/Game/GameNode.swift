@@ -9,10 +9,10 @@ import Foundation
 import Models
 
 extension Graph {
-    var game: GameNode { .init(graph: self) }
+    public var game: GameNode { .init(graph: self) }
 }
 
-struct GameNode {
+public struct GameNode {
     private let graph: Graph
     
     //MARK: - init(_:)
@@ -21,31 +21,43 @@ struct GameNode {
     }
     
     //MARK: - interface
-    var timeAmount: Double {
-        get { graph.state.timeAmount }
-        nonmutating set { graph.dispatch(GameActions.SetTimeAmount(newValue)) }
+    public var estimatedTime: String { graph.gameState.timeInMinutes }
+    
+    public var isPlaying: Bool { graph.gameState.isPlaying }
+    
+    public var questions: [Question] {
+        get { graph.gameState.questions }
+        nonmutating set { graph.dispatch(GameActions.UpdateQuestions(newValue)) }
     }
     
-    var questions: [Question] {
-        get { graph.state.questions.map(\.value) }
-        nonmutating set { graph.dispatch(GameActions.AddQuestions(newValue)) }
-    }
-    
-    var speed: GameState.GameSpeed {
-        get { graph.state.speed }
+    public var speed: GameState.GameSpeed {
+        get { graph.gameState.speed }
         nonmutating set { graph.dispatch(GameActions.ChangeSpeed(newValue)) }
     }
     
-    func play() {
+    public func play() {
         graph.dispatch(GameActions.Play())
     }
     
-    func pause() {
+    public func pause() {
         graph.dispatch(GameActions.Pause())
     }
     
-    func timerTick() {
+    public func timerTick() {
         graph.dispatch(GameActions.TimerTick())
+    }
+    
+    public func add(question: Question) {
+        graph.dispatch(GameActions.AddQuestion(question))
+    }
+    
+    public func set(gameTime: Double) {
+        let timeInSeconds = Int(gameTime * 60)
+        graph.dispatch(GameActions.SetTimeAmount(timeInSeconds))
+    }
+    
+    public func quit() {
+        graph.dispatch(GameActions.Quit())
     }
     
 }

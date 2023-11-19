@@ -16,7 +16,7 @@ struct SettingsView: View {
         List {
             HStack {
                 Text("Время игры, мин")
-                Slider(value: $settingsModel.timeGame, in: 0...20, step: 1)
+                Slider(value: $settingsModel.timeGame, in: 1...20, step: 1)
                     .tint(.orange)
                 Text("\(settingsModel.timeGame, specifier: "%.0f")")
             }
@@ -27,7 +27,14 @@ struct SettingsView: View {
             
             HStack {
                 Text("Скорость смены, заданий, сек")
-                Slider(value: $settingsModel.speedSwitch, in: 0...4, step: 1)
+                Slider(
+                    value: Binding(
+                        get: { Double(settingsModel.speedSwitch) },
+                        set: { settingsModel.speedSwitch = Int($0) }
+                    ),
+                    in: 1...5,
+                    step: 1
+                )
                     .tint(.orange)
                 Text("\(settingsModel.speedSwitch, specifier: "%.0f")")
             }
@@ -53,9 +60,9 @@ struct SettingsView: View {
                 )
             
             HStack {
-                Stepper("Размер букв", value: $settingsModel.sizeSymbol, in: 17...22, step: 1)
+                Stepper("Размер букв", value: $settingsModel.fontSize, in: 17...22, step: 1)
                 Text("Aa")
-                    .font(.system(size: settingsModel.sizeSymbol))
+                    .font(.system(size: settingsModel.fontSize))
             }
             .listRowBackground(
                 RoundedRectangle(cornerRadius: 10)
@@ -63,7 +70,7 @@ struct SettingsView: View {
             )
             HStack {
                 Text("Подложка для букв")
-                Toggle(isOn: $settingsModel.backgroundSymbol) {
+                Toggle(isOn: $settingsModel.isCellBackgroundEnabled) {
                 }
                 .tint(Color.orange)
             }

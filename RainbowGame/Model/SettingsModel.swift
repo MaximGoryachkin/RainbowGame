@@ -65,11 +65,11 @@ extension SelectColor {
 }
 
 final class SettingsModel: ObservableObject {
-    @AppStorage("speedSwitch") var speedSwitch: Double = 2
+    @AppStorage("speedSwitch") var speedSwitch: Int = 2
     @AppStorage("timeGame") var timeGame: Double = 11
     @AppStorage("checkedTask") var isCheckedTask: Bool = false
     @AppStorage("sizeSymbol") var sizeSymbolRow: Double = 12
-    @AppStorage("backgroundSymbol") var backgroundSymbol: Bool = false
+    @AppStorage("backgroundSymbol") var isCellBackgroundEnabled: Bool = false
 
     let colors: [SelectColor] = [SelectColor.geen, SelectColor.darckGreen, SelectColor.ping, SelectColor.lightBlue, SelectColor.darckRed, SelectColor.purpure, SelectColor.blue, SelectColor.orange, SelectColor.red, SelectColor.yellow, SelectColor.black, SelectColor.darckGray]
     @AppStorage("selectColor") var selectColors: [String] = []
@@ -80,7 +80,7 @@ final class SettingsModel: ObservableObject {
     @AppStorage("defaultBackgroundColor") var defaultBackgroundColor = DefaultBackgroundColors.gray
     @AppStorage("defaultWordArrangement") var defaultWordArrangement = WordsArrangements.random
     
-    var sizeSymbol: CGFloat {
+    var fontSize: CGFloat {
         get {
             return CGFloat(sizeSymbolRow)
         }

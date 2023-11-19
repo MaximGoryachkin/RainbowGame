@@ -38,7 +38,7 @@ struct ContentView: View {
                     
                     VStack(spacing: 16) {
                         MainButton(text: "Новая игра",
-                                   color: .red, destination: EmptyView())
+                                   color: .red, destination: GameViewConnector())
                         MainButton(text: "Продолжить", color: .blue, destination: EmptyView())
                         MainButton(text: "Статистика", color: .green, destination: ResultView())
                     }

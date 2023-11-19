@@ -17,7 +17,7 @@ final class GraphTests: XCTestCase {
     override func setUp() async throws {
         try await super.setUp()
         
-        sut = .init(GameState(), dispatch: { action in
+        sut = .init(AppState(), dispatch: { action in
             self.action = action
             }
         )
@@ -31,7 +31,7 @@ final class GraphTests: XCTestCase {
     }
     
     func test_setTimeAmount_emitGameActionSetTime() {
-        sut.game.timeAmount = 10
+        sut.gameNode.timeAmount = 10
         
         let action = action as? GameActions.SetTimeAmount
         XCTAssertEqual(
@@ -42,7 +42,7 @@ final class GraphTests: XCTestCase {
     
     func test_setQuestions_emitAddQuestionsAction() {
         let questions = [Question()]
-        sut.game.questions = questions
+        sut.gameNode.questions = questions
         
         let action = action as? GameActions.AddQuestions
         XCTAssertEqual(
@@ -52,7 +52,7 @@ final class GraphTests: XCTestCase {
     }
     
     func test_setSpeed_emitSetSpeedAction() {
-        sut.game.speed = .x2
+        sut.gameNode.speed = .x2
         
         let action = action as? GameActions.ChangeSpeed
         XCTAssertEqual(
@@ -62,19 +62,19 @@ final class GraphTests: XCTestCase {
     }
     
     func test_playAction() {
-        sut.game.play()
+        sut.gameNode.play()
         
         XCTAssertTrue(action is GameActions.Play)
     }
     
     func test_pauseAction() {
-        sut.game.pause()
+        sut.gameNode.pause()
         
         XCTAssertTrue(action is GameActions.Pause)
     }
     
     func test_timerTick() {
-        sut.game.timerTick()
+        sut.gameNode.timerTick()
         
         XCTAssertTrue(action is GameActions.TimerTick)
     }

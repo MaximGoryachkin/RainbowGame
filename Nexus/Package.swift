@@ -10,28 +10,30 @@ let package = Package(
         .macOS(.v12)
     ],
     products: [
-        .library(name: "GameModule", targets: ["GameModule"]),
+        .library(name: "TimerService", targets: ["TimerService"]),
+        .library(name: "QuestionService", targets: ["QuestionService"]),
+        .library(name: "SoundService", targets: ["SoundService"]),
+        .library(name: "Redux", targets: ["Redux"]),
+        .library(name: "Core", targets: ["Core"]),
+        .library(name: "Models", targets: ["Models"]),
     ],
     targets: [
         .target(name: "Redux"),
         .target(name: "Models"),
+        .target(name: "TimerService"),
+        .target(
+            name: "SoundService",
+            resources: [.process("Resources")]
+        ),
+        .target(
+            name: "QuestionService",
+            dependencies: ["Models"]),
         .target(
             name: "Core",
             dependencies: [
                 "Redux",
                 "Models"
             ]),
-        .target(
-            name: "GameModule",
-            dependencies: [
-                "Core"
-            ]),
-//        .testTarget(
-//            name: "GameModuleTests",
-//            dependencies: [
-//                "GameModule",
-//                "Core"
-//            ]),
         .testTarget(
             name: "CoreTests",
             dependencies: [

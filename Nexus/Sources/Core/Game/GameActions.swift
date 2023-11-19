@@ -9,14 +9,19 @@ import Foundation
 import Redux
 import Models
 
-enum GameActions {
-    struct TimerTick: Action {}
+public enum GameActions {
+    public struct TimerTick: Action {
+        public init() {}
+    }
+    public struct Quit: Action {
+        public init() {}
+    }
     struct Play: Action {}
     struct Pause: Action {}
     
     struct SetTimeAmount: Action, Equatable {
-        let time: Double
-        init(_ time: Double) { self.time = time }
+        let time: Int
+        init(_ time: Int) { self.time = time }
     }
 
     struct ChangeSpeed: Action, Equatable {
@@ -24,7 +29,12 @@ enum GameActions {
         init(_ speed: GameState.GameSpeed) { self.speed = speed }
     }
     
-    struct AddQuestions: Action, Equatable {
+    public struct AddQuestion: Action, Equatable {
+        let question: Question
+        public init(_ question: Question) { self.question = question }
+    }
+    
+    struct UpdateQuestions: Action, Equatable {
         let questions: [Question]
         init(_ questions: [Question]) { self.questions = questions }
     }
