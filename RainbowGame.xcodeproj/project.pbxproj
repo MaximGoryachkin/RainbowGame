@@ -16,6 +16,7 @@
 		895DC0102B07D5C400276275 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895DC00F2B07D5C400276275 /* ResultView.swift */; };
 		895DC0122B07D80A00276275 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895DC0112B07D80A00276275 /* ColorExtension.swift */; };
 		895DC0142B07E80400276275 /* NavigationTitleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895DC0132B07E80400276275 /* NavigationTitleExtension.swift */; };
+		898386AA2B0A0F9C0072BAEE /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 898386A92B0A0F9C0072BAEE /* Launch Screen.storyboard */; };
 		8994EFC82B00E1070022D8A4 /* RainbowGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8994EFC72B00E1070022D8A4 /* RainbowGameApp.swift */; };
 		8994EFCA2B00E1070022D8A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8994EFC92B00E1070022D8A4 /* ContentView.swift */; };
 		8994EFCC2B00E1090022D8A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8994EFCB2B00E1090022D8A4 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		895DC00F2B07D5C400276275 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		895DC0112B07D80A00276275 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		895DC0132B07E80400276275 /* NavigationTitleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleExtension.swift; sourceTree = "<group>"; };
+		898386A92B0A0F9C0072BAEE /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		8994EFC42B00E1070022D8A4 /* RainbowGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RainbowGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8994EFC72B00E1070022D8A4 /* RainbowGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowGameApp.swift; sourceTree = "<group>"; };
 		8994EFC92B00E1070022D8A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 		89407DA12B0109CF0002775A /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				898386A92B0A0F9C0072BAEE /* Launch Screen.storyboard */,
 				8994EFCB2B00E1090022D8A4 /* Assets.xcassets */,
 				8994EFCD2B00E1090022D8A4 /* Preview Content */,
 				895DC0112B07D80A00276275 /* ColorExtension.swift */,
@@ -232,6 +235,7 @@
 			files = (
 				EED09AF32B03BC9300FF47ED /* Nexus in Resources */,
 				8994EFCF2B00E1090022D8A4 /* Preview Assets.xcassets in Resources */,
+				898386AA2B0A0F9C0072BAEE /* Launch Screen.storyboard in Resources */,
 				8994EFCC2B00E1090022D8A4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +399,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -429,6 +434,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
