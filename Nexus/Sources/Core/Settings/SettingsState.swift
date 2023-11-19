@@ -32,6 +32,9 @@ public struct SettingsState: Reducer, Equatable {
         case let action as SettingsActions.UpdateSymbolColors:
             symbolColors = action.colors
             
+        case let action as SettingsActions.UpdateBackgrounds:
+            backgroundColors = action.colors
+            
         default: return
         }
     }

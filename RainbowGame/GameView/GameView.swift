@@ -114,7 +114,7 @@ struct GameViewConnector: Connector {
                 graph.game.play()
             },
             onDisappear: {
-                graph.game.pause()
+                graph.game.quit()
             }
         )
     }

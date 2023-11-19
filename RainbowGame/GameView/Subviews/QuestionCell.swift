@@ -30,25 +30,28 @@ struct QuestionCell: View {
     var body: some View {
         VStack(alignment: alignment) {
             HStack {
-                Text(question.colorName)
+                Text(question.colorName.capitalized)
                     .font(.system(size: settings.fontSize))
                     .foregroundStyle(question.symbolColor)
+                    .padding()
                     .padding(.trailing, 10)
                 if settings.isCheckedTask {
                     Toggle("", isOn: $question.isAnswered)
                         .toggleStyle(CheckboxIOS())
                         .frame(width: settings.fontSize)
                         .tint(.black)
+                        .background(Color.white)
                 }
             }
+            .padding()
+            .clipShape(RoundedRectangle(cornerRadius: 12))
             .background(
                 settings.isCellBackgroundEnabled
                 ? question.backgroundColor
                 : .clear
             )
+            .shadow(radius: 5)
         }
-        .padding()
-        .shadow(radius: 5)
     }
 }
 

@@ -72,6 +72,9 @@ public struct GameState: Reducer, Equatable {
         case let action as GameActions.ChangeSpeed:
             speed = action.speed
             
+        case is GameActions.Quit:
+            self = .init()
+            
         default: break
         }
     }

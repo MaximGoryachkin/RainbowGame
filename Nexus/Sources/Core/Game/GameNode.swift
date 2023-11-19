@@ -56,4 +56,8 @@ public struct GameNode {
         graph.dispatch(GameActions.SetTimeAmount(timeInSeconds))
     }
     
+    public func quit() {
+        graph.dispatch(GameActions.Quit())
+    }
+    
 }

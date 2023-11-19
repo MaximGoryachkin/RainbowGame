@@ -10,7 +10,12 @@ import Redux
 import Models
 
 public enum GameActions {
-    public struct TimerTick: Action { public init() {} }
+    public struct TimerTick: Action {
+        public init() {}
+    }
+    public struct Quit: Action {
+        public init() {}
+    }
     struct Play: Action {}
     struct Pause: Action {}
     
