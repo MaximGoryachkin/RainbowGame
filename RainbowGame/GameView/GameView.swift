@@ -110,6 +110,7 @@ struct GameViewConnector: Connector {
                 graph.game.speed = .init(rawValue: settings.speed) ?? .x1
                 graph.settings.symbolColors = settings.selectedColors.map(\.color)
                 graph.settings.selectedColors = settings.selectedColors.map(\.rawValue)
+                graph.settings.backgroundColors = settings.selectedColors.map(\.color)
                 graph.game.play()
             },
             onDisappear: {

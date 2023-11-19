@@ -10,14 +10,17 @@ import Redux
 import SwiftUI
 
 public struct SettingsState: Reducer, Equatable {
-    var symbolColors: [Color]
-    var colors: [String]
+    public var symbolColors: [Color]
+    public var backgroundColors: [Color]
+    public var colors: [String]
     
     public init(
         symbolColors: [Color] = .init(),
+        backgroundColors: [Color] = .init(),
         colors: [String] = .init()
     ) {
         self.symbolColors = symbolColors
+        self.backgroundColors = backgroundColors
         self.colors = colors
     }
     

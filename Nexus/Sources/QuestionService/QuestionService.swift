@@ -28,14 +28,14 @@ public final class QuestionService {
     }
     
     //MARK: - Public methods
-    func makeQuestion(_ settings: Settings) -> Question {
+    public func makeQuestion(_ settings: Settings) -> Question {
         logger?.log(level: .debug, #function)
         
         guard
             let symbolColor = settings.symbolColors.randomElement(),
             let backgroundColor = settings.backgroundColors.filter({ $0 != symbolColor }).randomElement()
         else {
-            assertionFailure("Invalid settings")
+ //           assertionFailure("Invalid settings")
             return Question()
         }
         

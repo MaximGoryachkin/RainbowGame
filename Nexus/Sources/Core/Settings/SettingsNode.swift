@@ -24,4 +24,9 @@ public struct SettingsNode {
         get { graph.settingsState.symbolColors }
         nonmutating set { graph.dispatch(SettingsActions.UpdateSymbolColors(newValue)) }
     }
+    
+    public var backgroundColors: [Color] {
+        get { graph.settingsState.backgroundColors }
+        nonmutating set { graph.dispatch(SettingsActions.UpdateBackgrounds(newValue)) }
+    }
 }

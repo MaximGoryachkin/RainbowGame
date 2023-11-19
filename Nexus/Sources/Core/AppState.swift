@@ -10,7 +10,7 @@ import Redux
 
 public struct AppState: Reducer, Equatable {
     public var gameState: GameState
-    var settingsState: SettingsState
+    public var settingsState: SettingsState
     
     public init(
         gameState: GameState = .init(),

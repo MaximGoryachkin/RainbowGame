@@ -10,7 +10,7 @@ import Redux
 import Models
 
 public struct GameState: Reducer, Equatable {
-    var timeAmount: Int
+    public var timeAmount: Int
     var score: Int
     var questions: [Question]
     public var speed: GameSpeed
@@ -93,6 +93,16 @@ extension GameState {
             case .x3: return "x3"
             case .x4: return "x4"
             case .x5: return "x5"
+            }
+        }
+        
+        public var cooldown: Int {
+            switch self {
+            case .x1: return 5
+            case .x2: return 4
+            case .x3: return 3
+            case .x4: return 2
+            case .x5: return 1
             }
         }
         
