@@ -20,7 +20,7 @@ struct ContentView: View {
                         .scaledToFit()
                         .padding(.horizontal, 35)
                         .scaleEffect(isRainbowAnimating ? 0.90 : 1)
-                        .animation(Animation.easeInOut(duration: 2.7)
+                        .animation(Animation.easeInOut(duration: 1.7)
                             .repeatForever(autoreverses: true), value: isRainbowAnimating)
                         .onAppear() {
                             self.isRainbowAnimating = true

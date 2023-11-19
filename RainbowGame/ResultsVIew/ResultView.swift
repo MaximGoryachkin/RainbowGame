@@ -51,7 +51,7 @@ struct ResultView: View {
              results: "Угадано 5/5")
     ]
     
-    @EnvironmentObject private var settingsObject: SettingsModel
+    @EnvironmentObject private var settingsModel: SettingsModel
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     
     var body: some View {
@@ -83,8 +83,8 @@ struct ResultView: View {
                 )
             }
             .listStyle(.plain)
-            .padding()
-//            .listRowSpacing(25)
+            .padding(30)
+            .listRowSpacing(25)
             
             Button {
                 // очищает статистику
@@ -100,15 +100,15 @@ struct ResultView: View {
         }
         .shadow(color: Color.black.opacity(0.2), radius: 3, y: 6)
         .navigationTitle("Статистика")
-        .specialNavBar(with: settingsObject.currentBackground, complition: {
+        .specialNavBar(with: settingsModel.currentBackground, complition: {
             presentationMode.wrappedValue.dismiss()
         })
-        .preferredColorScheme(settingsObject.colorScheme)
-        .background(settingsObject.backgroundColor())
+        .preferredColorScheme(settingsModel.colorScheme)
+        .background(settingsModel.backgroundColor())
     }
 }
 
-//#Preview {
-//    ResultView()
-//        .environmentObject(SettingsModel())
-//}
+#Preview {
+    ResultView()
+        .environmentObject(SettingsModel())
+}

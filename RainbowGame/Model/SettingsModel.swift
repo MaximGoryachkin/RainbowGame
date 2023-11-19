@@ -57,7 +57,7 @@ extension SelectColor {
         case .yellow:
             return Color(UIColor(red: 0.9982356429, green: 0.8419904709, blue: 0.03334137425, alpha: 1))
         case .black:
-            return Color(UIColor(red: 0, green: 0, blue: 0, alpha: 1))
+            return Color("NightMode")
         case .darckGray:
             return Color(UIColor(red: 0.3674305081, green: 0.3276185393, blue: 0.3588675261, alpha: 1))
         }
