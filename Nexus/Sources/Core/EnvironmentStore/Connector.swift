@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-protocol Connector: View {
+public protocol Connector: View {
     associatedtype Content: View
     func map(_ graph: Graph) -> Content
 }
 
-extension Connector {
+public extension Connector {
     var body: some View {
         Connected(map: self.map(_:))
     }

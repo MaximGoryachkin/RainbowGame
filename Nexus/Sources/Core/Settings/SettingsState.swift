@@ -10,25 +10,19 @@ import Redux
 import SwiftUI
 
 public struct SettingsState: Reducer, Equatable {
-    var backgroundColors: [Color]
     var symbolColors: [Color]
     var colors: [String]
     
     public init(
-        backgroundColors: [Color] = .init(),
         symbolColors: [Color] = .init(),
         colors: [String] = .init()
     ) {
-        self.backgroundColors = backgroundColors
         self.symbolColors = symbolColors
         self.colors = colors
     }
     
     public mutating func reduce(_ action: Action) {
         switch action {
-        case let action as SettingsActions.UpdateBackgrounds:
-            backgroundColors = action.colors
-            
         case let action as SettingsActions.UpdateColors:
             colors = action.colors
             

@@ -16,6 +16,7 @@ struct RainbowGameApp: App {
     private let store: Store<AppState>
     private let timerDriver: TimerDriver
     private let soundDriver: SoundDriver
+    private let questionDriver: QuestionDriver
     
     //MARK: - body
     var body: some Scene {
@@ -37,8 +38,10 @@ struct RainbowGameApp: App {
         }
         timerDriver = .init(store: store)
         soundDriver = .init(store: store)
+        questionDriver = .init(store: store)
         
         store.subscribe(timerDriver.asObserver)
         store.subscribe(soundDriver.asObserver)
+        store.subscribe(questionDriver.asObserver)
     }
 }

@@ -7,15 +7,22 @@
 
 import SwiftUI
 import Models
+import Redux
+import Core
 
 struct GameView: View {
     @EnvironmentObject private var settings: SettingsModel
     
+    //MARK: - Public properties
     let estimatedTime: String
     let gameSpeed: String
+    let isPlaying: Bool
     @Binding var questions: [Question]
-    @Binding var isPlaying: Bool
+    let playButtonTap: () -> Void
+    let onAppear: (Settings) -> Void
+    let onDisappear: () -> Void
     
+    //MARK: - body
     var body: some View {
         ZStack {
             settings.currentBackground
@@ -34,7 +41,8 @@ struct GameView: View {
                         SpeedButton(
                             title: gameSpeed,
                             tap: {},
-                            longTap: {})
+                            longTap: {}
+                        )
                     }
                 }
             }
@@ -44,13 +52,33 @@ struct GameView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(content: BackButton.init)
         .toolbar(content: playButton)
+        .onAppear { 
+            onAppear(
+                .init(
+                    gameTime: settings.timeGame,
+                    speed: settings.speedSwitch,
+                    selectedColors: settings.selectColors.compactMap(SelectColor.init),
+                    isCellBackgroundEnabled: settings.isCellBackgroundEnabled
+                )
+            )
+        }
+        .onDisappear { onDisappear() }
     }
     
+    //MARK: - Settings
+    struct Settings {
+        let gameTime: Double
+        let speed: Int
+        let selectedColors: [SelectColor]
+        let isCellBackgroundEnabled: Bool
+    }
+    
+}
+
+private extension GameView {
     func playButton() -> some ToolbarContent {
         ToolbarItem(placement: .topBarTrailing) {
-            Button(
-                action: { isPlaying.toggle() },
-                label: playImage)
+            Button(action: playButtonTap, label: playImage)
         }
     }
     
@@ -60,6 +88,34 @@ struct GameView: View {
               : "play.circle"
         )
         .tint(.black)
+    }
+    
+    
+}
+
+struct GameViewConnector: Connector {
+    func map(_ graph: Graph) -> some View {
+        return GameView(
+            estimatedTime: graph.game.estimatedTime,
+            gameSpeed: graph.game.speed.description,
+            isPlaying: graph.game.isPlaying, questions: Binding(
+                get: { graph.game.questions },
+                set: { graph.game.questions = $0 }
+            ),
+            playButtonTap: graph.game.isPlaying
+            ? graph.game.pause
+            : graph.game.play,
+            onAppear: { settings in
+                graph.game.set(gameTime: settings.gameTime)
+                graph.game.speed = .init(rawValue: settings.speed) ?? .x1
+                graph.settings.symbolColors = settings.selectedColors.map(\.color)
+                graph.settings.selectedColors = settings.selectedColors.map(\.rawValue)
+                graph.game.play()
+            },
+            onDisappear: {
+                graph.game.pause()
+            }
+        )
     }
 }
 
@@ -71,13 +127,14 @@ extension Question {
     ]
 }
 
-#Preview {
-    NavigationView {
-        GameView(
-            estimatedTime: "00:11", 
-            questions: .constant(Question.sample),
-            isPlaying: .constant(true)
-        )
-        .environmentObject(SettingsModel())
-    }
-}
+//#Preview {
+//    NavigationView {
+//        GameView(
+//            estimatedTime: "00:11", 
+//            gameSpeed: "x1",
+//            questions: .constant(Question.sample),
+//            isPlaying: .constant(true)
+//        )
+//        .environmentObject(SettingsModel())
+//    }
+//}

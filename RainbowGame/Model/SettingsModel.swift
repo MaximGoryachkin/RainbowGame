@@ -65,7 +65,7 @@ extension SelectColor {
 }
 
 final class SettingsModel: ObservableObject {
-    @AppStorage("speedSwitch") var speedSwitch: Double = 2
+    @AppStorage("speedSwitch") var speedSwitch: Int = 2
     @AppStorage("timeGame") var timeGame: Double = 11
     @AppStorage("checkedTask") var isCheckedTask: Bool = false
     @AppStorage("sizeSymbol") var sizeSymbolRow: Double = 12

@@ -15,8 +15,8 @@ public enum GameActions {
     struct Pause: Action {}
     
     struct SetTimeAmount: Action, Equatable {
-        let time: Double
-        init(_ time: Double) { self.time = time }
+        let time: Int
+        init(_ time: Int) { self.time = time }
     }
 
     struct ChangeSpeed: Action, Equatable {
@@ -24,7 +24,12 @@ public enum GameActions {
         init(_ speed: GameState.GameSpeed) { self.speed = speed }
     }
     
-    struct AddQuestions: Action, Equatable {
+    struct AddQuestion: Action, Equatable {
+        let question: Question
+        init(_ question: Question) { self.question = question }
+    }
+    
+    struct UpdateQuestions: Action, Equatable {
         let questions: [Question]
         init(_ questions: [Question]) { self.questions = questions }
     }

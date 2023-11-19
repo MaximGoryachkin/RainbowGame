@@ -10,16 +10,23 @@ import Redux
 import Models
 
 public struct GameState: Reducer, Equatable {
-    var timeAmount: Double
+    var timeAmount: Int
     var score: Int
     var questions: [Question]
-    var speed: GameSpeed
+    public var speed: GameSpeed
     var isGameCheckEnabled: Bool
     public var isPlaying: Bool
     
+    public var timeInMinutes: String {
+        let minutes = timeAmount / 60
+        let seconds = timeAmount % 60
+        
+        return [minutes.description,seconds.description].joined(separator: ":")
+    }
+    
     //MARK: - init(_:)
     public init(
-        timeAmount: Double = .init(),
+        timeAmount: Int = .init(),
         score: Int = .zero,
         questions: [Question] = .init(),
         speed: GameSpeed = .init(),
@@ -40,7 +47,10 @@ public struct GameState: Reducer, Equatable {
         case let action as GameActions.SetTimeAmount:
             timeAmount = action.time
             
-        case let action as GameActions.AddQuestions:
+        case let action as GameActions.AddQuestion:
+            questions.append(action.question)
+            
+        case let action as GameActions.UpdateQuestions:
             questions = action.questions
             
         case is GameActions.TimerTick:
@@ -75,6 +85,16 @@ extension GameState {
         case x3
         case x4
         case x5
+        
+        public var description: String {
+            switch self {
+            case .x1: return "x1"
+            case .x2: return "x2"
+            case .x3: return "x3"
+            case .x4: return "x4"
+            case .x5: return "x5"
+            }
+        }
         
         public init() { self = .x1 }
     }

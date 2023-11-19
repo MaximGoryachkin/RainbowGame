@@ -9,19 +9,19 @@ import Foundation
 import Redux
 
 public struct AppState: Reducer, Equatable {
-    public var game: GameState
-    var settings: SettingsState
+    public var gameState: GameState
+    var settingsState: SettingsState
     
     public init(
-        game: GameState = .init(),
-        settings: SettingsState = .init()
+        gameState: GameState = .init(),
+        settingsState: SettingsState = .init()
     ) {
-        self.game = game
-        self.settings = settings
+        self.gameState = gameState
+        self.settingsState = settingsState
     }
     
     mutating public func reduce(_ action: Action) {
-        game.reduce(action)
-        settings.reduce(action)
+        gameState.reduce(action)
+        settingsState.reduce(action)
     }
 }

@@ -6,11 +6,22 @@
 //
 
 import Foundation
+import SwiftUI
 
-extension Graph {
+public extension Graph {
     var settings: SettingsNode { .init(graph: self) }
 }
 
-struct SettingsNode {
+public struct SettingsNode {
     let graph: Graph
+    
+    public var selectedColors: [String] {
+        get { graph.settingsState.colors }
+        nonmutating set { graph.dispatch(SettingsActions.UpdateColors(colors: newValue)) }
+    }
+    
+    public var symbolColors: [Color] {
+        get { graph.settingsState.symbolColors }
+        nonmutating set { graph.dispatch(SettingsActions.UpdateSymbolColors(newValue)) }
+    }
 }

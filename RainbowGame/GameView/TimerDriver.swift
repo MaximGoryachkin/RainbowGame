@@ -43,7 +43,7 @@ final class TimerDriver {
 
 private extension TimerDriver {
     func process(_ state: AppState) {
-        switch state.game.isPlaying {
+        switch state.gameState.isPlaying {
         case true: timer.start()
         case false: timer.stop()
         }
